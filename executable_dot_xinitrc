@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Load Xresources
+[ -e ~/.Xresources ] && xrdb ~/.Xresources
+
+# Set keyboard layout and variant
+setxkbmap -layout us -variant altgr-intl
+
+# Start the gnome keyring daemon
+dbus-update-activation-environment --systemd DISPLAY
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
+# Reload last pywal colorscheme
+wal -R
+
+# Start udiskie
+udiskie &
+
+# Start i3
+exec i3

@@ -1,0 +1,20 @@
+!!!!!!!!!
+! FONTS !
+!!!!!!!!!
+
+*.font: Hack:pixelsize=16:antialias=true:autohint=true;
+*.alpha: 250
+
+Xft.lcdfilter: lcddefault
+Xft.antialias: true
+Xft.autohint: 0
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.dpi: 96
+
+!!!!!!!!
+! ROFI !
+!!!!!!!!
+
+rofi.font: Hack 11
