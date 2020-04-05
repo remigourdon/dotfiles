@@ -2,3 +2,7 @@ README.md
 Makefile
 *.deb
 *.tar.gz
+.vscode
+{{- if ne .chezmoi.os "linux" }}
+.hushlogin
+{{- end }}
