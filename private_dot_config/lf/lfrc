@@ -1,0 +1,205 @@
+#########
+# SHELL #
+#########
+
+# set POSIX complient shell to use
+set shell sh
+
+# Previewer script
+set previewer ~/.config/lf/pv.sh
+
+# set shell options
+set shellopts '-eu'
+
+# set internal field separator (IFS) to "\n" for shell commands
+set ifs "\n"
+
+#############
+# INTERFACE #
+#############
+
+# leave some space at the top and the bottom of the screen
+set scrolloff 10
+
+############
+# COMMANDS #
+############
+
+# show lf documentation
+cmd doc $lf -doc | less
+
+# open file(s)
+cmd open ${{
+    case $(file --mime-type $f -b) in
+        application/zip|application/gzip|application/x-xz|application/x-rar-compressed|application/x-7z-compressed|application/x-bzip2)
+            mntdir="$f-archivemount"
+            [ ! -d "$mntdir" ] && {
+                mkdir "$mntdir"
+                archivemount "$f" "$mntdir"
+            }
+            lf -remote "send $id cd \"$mntdir\""
+            lf -remote "send $id reload"
+            ;;
+        application/pdf) $READER $fx;;
+        image/*) sxiv $fx;;
+        text/*) $EDITOR $fx;;
+        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+# make directories
+cmd mkdir %mkdir -p "$@"
+
+# make files
+cmd mkfile $[ $# -ne 0 ] && $EDITOR "$@"
+
+# change permissions
+cmd chmod %[ $# -ne 0 ] && chmod -R "$1" $fx && lf -remote "send $id reload"
+
+# rename file (no overwrite)
+cmd rename %[ -e $1 ] && printf "'$1' already exists" || mv $f $1
+
+# trash file(s)
+cmd trash %mkdir -p ~/.trash && mv $fx ~/.trash
+
+# delete file(s)
+cmd delete %rm -rf $fx
+
+# extract file
+cmd extract ${{
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip $f;;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+}}
+
+# compress file(s) with tar and gunzip
+cmd tar ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    tar czf $1.tar.gz $1
+    rm -rf $1
+}}
+
+# compress file(s) with zip
+cmd zip ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    zip -r $1.zip $1
+    rm -rf $1
+}}
+
+# unmount archive
+cmd uarchivemount ${{
+    if [ ${f%-archivemount} != $f ] ; then
+        fusermount -u $(readlink -f $f) && rm -r $f
+    fi
+}}
+
+# fasd
+cmd fasdz ${{
+    fasd -Rdl | ~/.fzf/bin/fzf -1 -0 --no-sort +m | xargs -I{} lf -remote "send $id cd \"{}\""
+}}
+cmd fasdv ${{
+    fasd -Rfl | ~/.fzf/bin/fzf -1 -0 --no-sort +m | xargs -r "${EDITOR}"
+}}
+
+##############
+# UNMAPPINGS #
+##############
+
+map r
+map c
+map f
+map n
+
+############
+# MAPPINGS #
+############
+
+# put lf in the background
+map <c-z> $kill -STOP $PPID
+
+# tmux splits
+map S %tmux split -v lf
+map V %tmux split -h lf
+
+# bat pager
+map I $bat --paging=always $f
+
+# clear selection
+map C clear
+
+# use enter for shell commands
+map <enter> shell
+
+# execute current file (must be executable)
+map x $$f
+map X !$f
+
+# dedicated keys for file opener actions
+map o &mimeopen $f
+map O $mimeopen --ask $f
+
+# make directories
+map a push :mkdir<space>
+
+# make files
+map n push :mkfile<space>
+
+# rename current file
+map rn push :rename<space>
+
+# bulk rename with vimdir
+map rN $vidir $fx
+
+# remove file(s)
+map rm trash
+map rM delete
+
+# umounts
+map Ua :uarchivemount
+
+# fasd
+map fz :fasdz
+map fv :fasdv
+
+# gotos
+map gh cd ~/
+map gd cd ~/Documents/
+map gl cd ~/Downloads/
+map gp cd ~/Projects/
+map gP cd ~/Pictures/
+map gi cd ~/Images/
+map gq cd ~/QNAP/Public/
+map gs cd ~/Sources/
+map gb cd ~/Sandbox/
+map gt cd ~/Data/
+map gT cd ~/.trash/
+map gc cd ~/.dotfiles/
+map gC cd ~/.config/
+map gn cd ~/.dotfiles/tools/navi/cheats/
+map gr cd ~/TresoritDrive/
+map gm cd /media/remi/
+
+# configs
+map ce $$EDITOR ~/.profile
+map ca $$EDITOR ~/.aliases
+map cb $$EDITOR ~/.bashrc
+map cll $$EDITOR ~/.config/lf/lfrc ; lf -remote "send $id source ~/.config/lf/lfrc"
+map clp $$EDITOR ~/.config/lf/pv.sh
+map cv $$EDITOR ~/.config/nvim/init.vim
+map cpl $$EDITOR ~/.config/polybar/launch.sh
+map cpm $$EDITOR ~/.config/polybar/modules.ini
+map cz $$EDITOR ~/.config/zathura/zathurarc
+map ct $$EDITOR ~/.tmux.conf
+map ci $$EDITOR ~/.config/i3/config
+map cy $$EDITOR ~/.config/youtube-dl/config
+map cd $$EDITOR ~/.config/dunst/dunstrc
