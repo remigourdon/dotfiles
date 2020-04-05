@@ -1,0 +1,35 @@
+# Disable ctrl-s and ctrl-q
+stty -ixon
+
+# Allow to cd into a directory by typing the directory name
+shopt -s autocd
+
+# Infinite history
+HISTSIZE= HISTFILESIZE=
+
+# Enable completion
+[ -e /etc/bash_completion ] && source /etc/bash_completion
+
+# Prompt
+GIT_PROMPT="${HOME}/.git-prompt.sh"
+if [ -e "${GIT_PROMPT}" ] ; then
+    source "${GIT_PROMPT}"
+    export PS1='\[$(tput bold)\]\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 1)\]\W\[$(tput setaf 4)\]$(__git_ps1 " (%s)") \[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]'
+fi
+
+# Source navi widget
+source <(navi widget bash)
+
+# Enable fasd with completions
+fasd_cache="${HOME}/.fasd-init-bash"
+if [ "$(command -v fasd)" -nt "${fasd_cache}" -o ! -s "${fasd_cache}" ]; then
+    fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "${fasd_cache}"
+fi
+source "${fasd_cache}"
+unset fasd_cache
+
+# Enable fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Setup aliases
+[ -e "${HOME}/.aliases" ] && source "${HOME}/.aliases"
