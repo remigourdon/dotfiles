@@ -1,0 +1,8 @@
+[user]
+	name = rgourdon
+	email = {{ .email }}
+[filter "nbstripout"]
+	clean = '/usr/bin/python3' -m nbstripout
+	smudge = cat
+[diff "ipynb"]
+	textconv = '/usr/bin/python3' -m nbstripout -t
