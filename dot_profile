@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Set default programs
+export EDITOR="nvim"
+export TERMINAL="st"
+export BROWSER="firefox"
+export READER="zathura"
+export FILE="lf"
+
+# Start X11 server if i3 is not already running
+[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx
+
+# lf
+LFCD="$GOPATH/src/github.com/gokcehan/lf/etc/lfcd.sh"
+if [ -f "$LFCD" ]; then
+    source "$LFCD"
+fi
+
+# Go
+export GOPATH="${HOME}/.go"
+export PATH="$PATH:${GOPATH}/bin"
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Local binaries
+if [ -d "${HOME}/.local/bin" ] ; then
+    export PATH="$PATH:${HOME}/.local/bin"
+fi
+
+# Load bashrc
+echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && . "${HOME}/.bashrc"
