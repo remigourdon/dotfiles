@@ -1,0 +1,112 @@
+# Verbose for safety
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# ls
+alias ls='ls --color=auto --group-directories-first'
+alias l='ls'
+alias ll='ls -lh'
+alias la='ls -lah'
+
+# cd
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# lfcd
+alias cl="lfcd"
+
+# lsblk
+alias lk='lsblk'
+
+# grep
+alias grep='grep --color=auto'
+
+# diff
+alias diff='diff --color=auto'
+
+# git
+alias gs='git status'
+alias gl='git log'
+alias gd='git diff'
+alias ga='git add'
+alias gaa='git add .'
+alias gb='git branch'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gca='git commit --amend'
+alias gri='git rebase --interactive'
+
+# Remove host from SSH keygen know hosts
+alias sshr='ssh-keygen -f $HOME/.ssh/known_hosts -R'
+
+# Set terminfo on SSH session
+alias ssh='TERM=st-256color ssh'
+
+# Set date on remote
+sshd() { ssh "${1}" sudo date -s @"$(date +%s)" ; }
+
+# neovim
+command -v nvim >/dev/null 2>&1 && alias vim='nvim'
+
+# tmux
+alias tml='tmux list-sessions'
+alias tma='tmux attach-session -t'
+alias tmk='tmux kill-session -t'
+
+# udiskie
+alias udm='udiskie-mount -r'
+alias udu='udiskie-umount --force'
+alias udua='udiskie-umount --all'
+alias udd='udiskie-umount --force --detach'
+alias udda='udiskie-umount --all --detach'
+
+# json
+alias json='jq .'
+
+# change directory using fasd and fzf
+unalias z
+unalias zz
+z() {
+    [ $# -gt 0 ] && fasd_cd -d "$*" && return
+    cd "$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)"
+}
+
+# Display CSV
+csv() {
+    if [ "$#" -ne 0 ] ; then
+        printf '%s\n' "${@}" | xargs -I{} sh -c 'echo "> {}" ; column -t -s, -n {}' | less -F -S -X -K
+    else
+        column -t -s, -n "$@" | less -F -S -X -K
+    fi
+}
+
+# Display TSV
+tsv() {
+    if [ "$#" -ne 0 ] ; then
+        printf '%s\n' "${@}" | xargs -I{} sh -c 'echo "> {}" ; column -t -s "$(printf "\t")" -n {}' | less -F -S -X -K
+    else
+        column -t -s "$(printf '\t')" -n "$@" | less -F -S -X -K
+    fi
+}
+
+# Recursive git commands
+gr() {
+    for d in $(find . -mindepth 1 -type d -name '.git') ; do
+        (
+            cd "${d%.git}"
+            if git rev-parse --is-inside-work-tree >/dev/null 2>&1 ; then
+                echo "> ${PWD}"
+                git --git-dir="${PWD}/.git" --work-tree="${PWD}" "${@}"
+                echo
+            fi
+        )
+    done
+}
+alias grl='gr log HEAD --oneline --no-walk'
+alias grs='gr status --short'
+
+# Create new script
+newscript() { [ "$#" -eq 2 ] && touch $1 && chmod +x $1 && "${EDITOR}" -c "set filetype=$2" $1 ; }
