@@ -1,0 +1,180 @@
+#####################
+# BASIC DEFINITIONS #
+#####################
+
+# Modifier key
+set $mod Mod4
+
+# Terminal
+set $term --no-startup-id $TERMINAL
+
+# i3-gaps
+for_window [class="^.*"] border pixel 2
+gaps inner 15
+gaps outer 15
+
+# Modifier for moving floating windows
+floating_modifier $mod
+
+#####################
+# EXTERNAL PROGRAMS #
+#####################
+
+# compton
+exec --no-startup-id compton
+
+# setup display
+exec --no-startup-id display-setup.sh
+
+# locker
+exec --no-startup-id xss-lock -- i3lock-fancy -p
+
+# polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# redshift
+exec --no-startup-id redshift
+
+# tresorit
+exec --no-startup-id $HOME/.local/share/tresorit/tresorit-daemon
+
+# dunst
+exec --no-startup-id dunst
+
+##########
+# COLORS #
+##########
+
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
+##################
+# BASIC BINDINGS #
+##################
+
+# Basic applications
+bindsym $mod+d 		    exec "rofi -show drun"
+bindsym $mod+o 		    exec ~/.config/rofi/scripts/bangs.sh
+bindsym $mod+Return 	exec $term
+bindsym $mod+q          exec display-setup.sh
+bindsym $mod+w          exec sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs set-wallpaper.sh
+bindsym $mod+Shift+W    exec sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs set-wallpaper.sh -o
+
+# Exit i3 and log out of X session
+bindsym $mod+Shift+e 	exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Reload i3 configuration
+bindsym $mod+Shift+c 	    reload
+
+# Restart i3 inplace
+bindsym $mod+Shift+r 	    restart
+
+# Floating mode
+bindsym $mod+Shift+space	floating toggle
+bindsym $mod+space		    focus mode_toggle
+
+# Lock screen
+bindsym $mod+Shift+s	    exec loginctl lock-session
+
+###################
+# WINDOWS BINDINGS #
+###################
+
+bindsym $mod+f		    fullscreen toggle
+
+bindsym $mod+h		    focus left
+bindsym $mod+Shift+h	move left
+
+bindsym $mod+j		    focus down
+bindsym $mod+Shift+j	move down
+
+bindsym $mod+k		    focus up
+bindsym $mod+Shift+k	move up
+
+bindsym $mod+l		    focus right
+bindsym $mod+Shift+l	move right
+
+bindsym $mod+s		    split v
+
+bindsym $mod+v		    split h
+
+bindsym $mod+Shift+q 	kill
+
+# Resize mode
+bindsym $mod+r 		mode "resize"
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym $mod+r mode "default"
+}
+
+#######################
+# WORKSPACES BINDINGS #
+#######################
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+bindsym $mod+x move workspace to output right
+bindsym $mod+z move workspace to output up
+
+#########################
+# SPECIAL KEYS BINDINGS #
+#########################
+
+# File manager
+bindsym $mod+m exec --no-startup-id $term -e bash -c 'tmux new-session -A -s lf lf'
+
+# Volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
+# Screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 10%-
+
+# Screen capture
+bindsym --release Print exec scrot -e 'mv $f ~/Pictures/'
+bindsym --release $mod+Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
