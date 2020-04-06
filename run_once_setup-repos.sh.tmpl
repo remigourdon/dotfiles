@@ -4,12 +4,14 @@ set -Eeuo pipefail
 
 config_local() {
     local dest="${1}"
+{{- if not ( contains "home" .chezmoi.hostname ) }}
     echo "Configuring local user in ${dest}"
     (
         cd "${dest}"
         git config --local user.name "{{ .name }}"
         git config --local user.email "{{ .email }}"
     )
+{{- end }}
 }
 
 clone_repo() {
