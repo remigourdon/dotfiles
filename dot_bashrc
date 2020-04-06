@@ -18,7 +18,9 @@ if [ -e "${GIT_PROMPT}" ] ; then
 fi
 
 # Source navi widget
-source <(navi widget bash)
+if command -v navi >/dev/null 2>&1 ; then
+    source <(navi widget bash)
+fi
 
 # Enable fasd with completions
 fasd_cache="${HOME}/.fasd-init-bash"
