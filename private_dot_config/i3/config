@@ -23,8 +23,8 @@ floating_modifier $mod
 # compton
 exec --no-startup-id compton
 
-# setup display
-exec --no-startup-id display-setup.sh
+# setup monitors with xrandr
+exec --no-startup-id ,xrandr-setup
 
 # locker
 exec --no-startup-id xss-lock -- i3lock-fancy -p
@@ -66,8 +66,8 @@ bindsym $mod+d 		    exec "rofi -show drun"
 bindsym $mod+o 		    exec ~/.config/rofi/scripts/bangs.sh
 bindsym $mod+Return 	exec $term
 bindsym $mod+q          exec display-setup.sh
-bindsym $mod+w          exec sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs set-wallpaper.sh
-bindsym $mod+Shift+W    exec sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs set-wallpaper.sh -o
+bindsym $mod+w          exec sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs ,wallpaper-set
+bindsym $mod+Shift+W    exec sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs ,wallpaper-set -o
 
 # Exit i3 and log out of X session
 bindsym $mod+Shift+e 	exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"

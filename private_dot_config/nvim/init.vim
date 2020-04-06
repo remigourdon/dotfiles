@@ -142,7 +142,7 @@ colorscheme wal
 " ULTISNIPS "
 """""""""""""
 
-let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/mysnippets', 'UltiSnips']
+let g:UltiSnipsSnippetDirectories = [$HOME.'/.snippets', 'UltiSnips']
 let g:UltiSnipsEditSplit="context"
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"

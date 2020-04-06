@@ -12,21 +12,22 @@ export FILE="lf"
 
 # lf
 LFCD="$GOPATH/src/github.com/gokcehan/lf/etc/lfcd.sh"
-if [ -f "$LFCD" ]; then
-    source "$LFCD"
-fi
+[ -f "$LFCD" ] && . "$LFCD"
+
+# Scripts
+SCRIPTSPATH="${HOME}/.scripts"
+[ -d "${SCRIPTSPATH}" ] && export PATH="$PATH:${SCRIPTSPATH}"
 
 # Go
 export GOPATH="${HOME}/.go"
-export PATH="$PATH:${GOPATH}/bin"
+[ -d "${GOPATH}" ] && export PATH="$PATH:${GOPATH}/bin"
 
 # Rust
-export PATH="$HOME/.cargo/bin:$PATH"
+RUSTPATH="${HOME}/.cargo"
+[ -d "${RUSTPATH}" ] && export PATH="$PATH:${RUSTPATH}/bin"
 
 # Local binaries
-if [ -d "${HOME}/.local/bin" ] ; then
-    export PATH="$PATH:${HOME}/.local/bin"
-fi
+[ -d "${HOME}/.local/bin" ] && export PATH="$PATH:${HOME}/.local/bin"
 
 # Load bashrc
 echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && . "${HOME}/.bashrc"
