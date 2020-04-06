@@ -6,8 +6,8 @@ config_local() {
     local dest="${1}"
     (
         cd "${dest}"
-        git config --local user.name remigourdon
-        git config --local user.email gourdon.remi@gmail.com
+        git config --local user.name {{ .name }}
+        git config --local user.email {{ .email }}
     )
 }
 

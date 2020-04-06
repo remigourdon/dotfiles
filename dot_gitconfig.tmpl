@@ -1,6 +1,8 @@
+{{ $name := promptString "name" -}}
+{{ $email := promptString "email" -}}
 [user]
-	name = {{ .name }}
-	email = {{ .email }}
+	name = {{ coalesce $name .name }}
+	email = {{ coalesce $email .email }}
 [filter "nbstripout"]
 	clean = '/usr/bin/python3' -m nbstripout
 	smudge = cat
