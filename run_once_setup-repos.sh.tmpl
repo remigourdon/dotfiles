@@ -4,10 +4,11 @@ set -Eeuo pipefail
 
 config_local() {
     local dest="${1}"
+    echo "Configuring local user in ${dest}"
     (
         cd "${dest}"
-        git config --local user.name {{ .name }}
-        git config --local user.email {{ .email }}
+        git config --local user.name "{{ .name }}"
+        git config --local user.email "{{ .email }}"
     )
 }
 
@@ -17,7 +18,7 @@ clone_repo() {
     if [ -e "${dest}" ] ; then
         return 1
     fi
-    echo "Configuring ${repo} in ${dest}"
+    echo "Cloning ${repo} in ${dest}"
     git clone "${repo}" "${dest}" && config_local "${dest}"
 }
 
