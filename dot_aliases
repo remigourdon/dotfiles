@@ -68,7 +68,7 @@ alias udda='udiskie-umount --all --detach'
 alias json='jq .'
 
 # xclip
-alias clip='echo -n !!:q | xclip -selection clipboard'
+alias clip='echo -n $(fc -l -n -1) | xclip -selection clipboard'
 
 # change directory using fasd and fzf
 unalias z
