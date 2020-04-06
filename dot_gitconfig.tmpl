@@ -1,8 +1,12 @@
-{{ $name := promptString "name" -}}
-{{ $email := promptString "email" -}}
+{{- if contains "home" .chezmoi.hostname }}
 [user]
-	name = {{ coalesce $name .name }}
-	email = {{ coalesce $email .email }}
+	name = {{ .name }}
+	email = {{ .email }}
+{{- else }}
+[user]
+	name = {{ .work.name }}
+	email = {{ .work.email }}
+{{- end }}
 [filter "nbstripout"]
 	clean = '/usr/bin/python3' -m nbstripout
 	smudge = cat
