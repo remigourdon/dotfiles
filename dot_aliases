@@ -1,3 +1,5 @@
+# shellcheck shell=sh
+
 # Verbose for safety
 alias rm='rm -i'
 alias cp='cp -i'
@@ -39,6 +41,15 @@ alias gc='git commit'
 alias gcm='git commit -m'
 alias gca='git commit --amend'
 alias gri='git rebase --interactive'
+
+# Activate python virtual environment
+venv() {
+    if [ $# -eq 1 ] ; then
+        . "${1}/venv/bin/activate"
+    else
+        . venv/bin/activate
+    fi
+}
 
 # Remove host from SSH keygen know hosts
 alias sshr='ssh-keygen -f $HOME/.ssh/known_hosts -R'
