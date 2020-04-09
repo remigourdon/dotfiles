@@ -14,6 +14,7 @@ Plug 'dylanaraps/wal.vim'
 Plug 'sirver/ultisnips'
 Plug 'jiangmiao/auto-pairs'
 Plug 'lfv89/vim-interestingwords'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 """""""""""
