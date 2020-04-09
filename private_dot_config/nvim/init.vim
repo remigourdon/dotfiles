@@ -15,6 +15,7 @@ Plug 'sirver/ultisnips'
 Plug 'jiangmiao/auto-pairs'
 Plug 'lfv89/vim-interestingwords'
 Plug 'airblade/vim-gitgutter'
+Plug 'valloric/youcompleteme'
 call plug#end()
 
 """""""""""
@@ -145,7 +146,7 @@ colorscheme wal
 
 let g:UltiSnipsSnippetDirectories = [$HOME.'/.snippets', 'UltiSnips']
 let g:UltiSnipsEditSplit="context"
-let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 nnoremap <Leader>ue :UltiSnipsEdit<cr>
