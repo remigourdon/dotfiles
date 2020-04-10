@@ -17,6 +17,9 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+# stat
+alias octal='stat -c "%A %a %n"'
+
 # lfcd
 alias cl="lfcd"
 
