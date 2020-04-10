@@ -65,7 +65,7 @@ client.background       $bg
 bindsym $mod+d 		    exec "rofi -show drun"
 bindsym $mod+o 		    exec ~/.config/rofi/scripts/bangs.sh
 bindsym $mod+Return 	exec $term
-bindsym $mod+q          exec display-setup.sh
+bindsym $mod+q          exec ",xrandr-setup"
 bindsym $mod+w          exec sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs ,wallpaper-set
 bindsym $mod+Shift+W    exec sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs ,wallpaper-set -o
 
