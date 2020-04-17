@@ -40,9 +40,9 @@ cmd open ${{
             lf -remote "send $id cd \"$mntdir\""
             lf -remote "send $id reload"
             ;;
-        application/pdf) $READER $fx;;
-        image/*) sxiv $fx;;
-        text/*) $EDITOR $fx;;
+        application/pdf) $READER $fx > /dev/null 2> /dev/null & ;;
+        image/*) sxiv $fx > /dev/null 2> /dev/null & ;;
+        text/*) $EDITOR $fx ;;
         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
