@@ -3,6 +3,7 @@
 """"""""""""
 
 call plug#begin('~/.config/nvim/plugged')
+Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-surround'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -10,12 +11,11 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-abolish'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'dylanaraps/wal.vim'
 Plug 'sirver/ultisnips'
 Plug 'jiangmiao/auto-pairs'
 Plug 'lfv89/vim-interestingwords'
 Plug 'airblade/vim-gitgutter'
-Plug 'valloric/youcompleteme'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 """""""""""
@@ -45,9 +45,6 @@ set noswapfile
 " Allow hiding buffers
 set hid
 
-" Change directory
-nnoremap <leader>lcd :lcd %:p:h<CR>:pwd<CR>
-
 """""""""""""
 " FILETYPES "
 """""""""""""
@@ -57,6 +54,12 @@ au BufRead,BufNewFile *.source setfiletype sh
 """"""""""
 " DISLAY "
 """"""""""
+
+" Colorscheme
+colorscheme molokai
+
+" Always draw the signcolumn.
+set signcolumn=yes
 
 " Hybrid numbering
 set relativenumber number
@@ -100,19 +103,13 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-"""""""
-" WAL "
-"""""""
-
-colorscheme wal
-
 """""""""""""
 " ULTISNIPS "
 """""""""""""
 
 let g:UltiSnipsSnippetDirectories = [$HOME.'/.snippets', 'UltiSnips']
 let g:UltiSnipsEditSplit="context"
-let g:UltiSnipsExpandTrigger = "<c-j>"
+let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 nnoremap <Leader>ue :UltiSnipsEdit<cr>
@@ -136,6 +133,12 @@ set wildmode=list:longest,full
 " Check file in shellcheck:
 map <leader>s :!clear && shellcheck -x %<CR>
 
+""""""""""""
+" DEOPLETE "
+""""""""""""
+
+let g:deoplete#enable_at_startup = 1
+
 """"""""""""""""
 " HIGHLIGHTING "
 """"""""""""""""
@@ -145,3 +148,7 @@ syntax enable
 
 " Comments in italics
 highlight Comment cterm=italic
+
+" Left bar background
+highlight clear LineNr
+highlight clear SignColumn
