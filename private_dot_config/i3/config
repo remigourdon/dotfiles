@@ -63,11 +63,11 @@ client.background       $bg
 
 # Basic applications
 bindsym $mod+d 		    exec "rofi -show drun"
-bindsym $mod+o 		    exec ~/.config/rofi/scripts/bangs.sh
+bindsym $mod+o 		    exec "~/.config/rofi/scripts/bangs.sh"
 bindsym $mod+Return 	exec $term
 bindsym $mod+q          exec ",xrandr-setup"
-bindsym $mod+w          exec sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs ,wallpaper-set
-bindsym $mod+Shift+W    exec sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs ,wallpaper-set -o
+bindsym $mod+w          exec "sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs ,wallpaper-set"
+bindsym $mod+Shift+W    exec "sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs ,wallpaper-set -o"
 
 # Exit i3 and log out of X session
 bindsym $mod+Shift+e 	exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"

@@ -7,7 +7,7 @@ ZSH_THEME="agnoster"
 # Set fzf installation directory path
 export FZF_BASE=$HOME/.fzf
 
-plugins=(git fzf vi-mode)
+plugins=(git vi-mode)
 
 # Custom completions directory
 mkdir -p $HOME/.zsh_completions
@@ -40,6 +40,9 @@ if [ "$(command -v fasd)" -nt "${fasd_cache}" -o ! -s "${fasd_cache}" ]; then
 fi
 source "${fasd_cache}"
 unset fasd_cache
+
+# Enable fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Load aliases
 [ -e $HOME/.aliases ] && source $HOME/.aliases
