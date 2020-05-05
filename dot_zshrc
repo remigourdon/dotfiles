@@ -7,7 +7,7 @@ ZSH_THEME="agnoster"
 # Set fzf installation directory path
 export FZF_BASE=$HOME/.fzf
 
-plugins=(git vi-mode)
+plugins=(git vi-mode docker docker-compose)
 
 # Custom completions directory
 mkdir -p $HOME/.zsh_completions
