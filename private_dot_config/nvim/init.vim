@@ -16,6 +16,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'lfv89/vim-interestingwords'
 Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 call plug#end()
 
 """""""""""
@@ -42,8 +43,9 @@ set mouse=a
 " Disable swap files
 set noswapfile
 
-" Allow hiding buffers
-set hid
+" Autowrite
+set autowrite
+set autowriteall
 
 """""""""""""
 " FILETYPES "
@@ -103,13 +105,22 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
 
+"""""""""""
+" VIMWIKI "
+"""""""""""
+
+let g:vimwiki_list = [{'path': '~/Documents/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
+let g:vimwiki_global_ext = 0
+
 """""""""""""
 " ULTISNIPS "
 """""""""""""
 
-let g:UltiSnipsSnippetDirectories = [$HOME.'/.snippets', 'UltiSnips']
+let g:UltiSnipsSnippetDirectories = [$HOME.'/.snippets']
 let g:UltiSnipsEditSplit="context"
-let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 nnoremap <Leader>ue :UltiSnipsEdit<cr>
@@ -152,3 +163,13 @@ highlight Comment cterm=italic
 " Left bar background
 highlight clear LineNr
 highlight clear SignColumn
+
+""""""""""""
+" AUTOCMDS "
+""""""""""""
+
+" Remove trailing whitespace on save
+autocmd BufWritePre *.py :%s/\s\+$//e
+
+" Always write when losing focus
+:au FocusLost * :wa
