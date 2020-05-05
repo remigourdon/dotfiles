@@ -159,6 +159,28 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+x move workspace to output right
 bindsym $mod+z move workspace to output up
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+###############
+# SCRATCHPADS #
+###############
+
+# Gnome calculator
+for_window [class=Calculator] move scratchpad
+for_window [class=Calculator] resize set 720 510
+bindsym $mod+equal [class=Calculator] scratchpad show; move position center
+bindsym $mod+Shift+equal exec gnome-calculator --class=Calculator
+
+# vimwiki
+for_window [class=vimwiki] move scratchpad
+for_window [class=vimwiki] resize set 1350 850
+bindsym $mod+n [class=vimwiki] scratchpad show; move position center
+bindsym $mod+Shift+n exec $term -c vimwiki -e nvim -c "cd ~/Documents/vimwiki" -c VimwikiIndex
+
 #########################
 # SPECIAL KEYS BINDINGS #
 #########################
