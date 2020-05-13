@@ -1,14 +1,18 @@
 {{- if contains "home" .chezmoi.hostname }}
 [user]
-	name = {{ .name }}
-	email = {{ .email }}
+    name = {{ .name }}
+    email = {{ .email }}
 {{- else }}
 [user]
-	name = {{ .work.name }}
-	email = {{ .work.email }}
+    name = {{ .work.name }}
+    email = {{ .work.email }}
 {{- end }}
+[core]
+    pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+[interactive]
+    diffFilter = delta --color-only
 [filter "nbstripout"]
-	clean = '/usr/bin/python3' -m nbstripout
-	smudge = cat
+    clean = '/usr/bin/python3' -m nbstripout
+    smudge = cat
 [diff "ipynb"]
-	textconv = '/usr/bin/python3' -m nbstripout -t
+    textconv = '/usr/bin/python3' -m nbstripout -t

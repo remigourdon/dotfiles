@@ -39,7 +39,7 @@ alias lk='lsblk'
 alias grep='grep --color=auto'
 
 # diff
-alias diff='diff --color=auto'
+alias diff='diff -u --color=auto'
 
 # git
 alias gs='git status'
