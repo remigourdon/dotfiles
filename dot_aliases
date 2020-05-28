@@ -1,5 +1,8 @@
 # shellcheck shell=sh
 
+# sudo
+alias sudoe='sudo env "PATH=$PATH"'
+
 # Verbose for safety
 alias rm='rm -i'
 alias cp='cp -i'
@@ -43,7 +46,7 @@ alias diff='diff -u --color=auto'
 
 # git
 alias gs='git status'
-alias gl='git log'
+alias gl='git log --all --decorate --oneline --graph'
 alias gd='git diff'
 alias ga='git add'
 alias gaa='git add .'
@@ -88,6 +91,7 @@ command -v nvim >/dev/null 2>&1 && alias vim='nvim'
 alias tml='tmux list-sessions'
 alias tma='tmux attach-session -t'
 alias tmk='tmux kill-session -t'
+alias tmn='tmux new-session -A -s'
 
 # udiskie
 alias udm='udiskie-mount -r'
