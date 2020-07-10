@@ -44,5 +44,8 @@ unset fasd_cache
 # Enable fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Enable nonomatch to pass unexpanded globs
+setopt nonomatch
+
 # Load aliases
 [ -e $HOME/.aliases ] && source $HOME/.aliases
