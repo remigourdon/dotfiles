@@ -18,6 +18,9 @@ COMMANDS["pdfs"]="${HOME}/.config/rofi/scripts/pdfs.sh"
 # Document opener
 COMMANDS["docs"]="${HOME}/.config/rofi/scripts/docs.sh"
 
+# PCAPNG opener
+COMMANDS["pcapng"]="${HOME}/.config/rofi/scripts/pcapng.sh"
+
 # VirtualBox
 COMMANDS["vbox"]="${HOME}/.config/rofi/scripts/vbox.sh"
 
