@@ -14,8 +14,8 @@ Plug 'sirver/ultisnips'
 Plug 'jiangmiao/auto-pairs'
 Plug 'lfv89/vim-interestingwords'
 Plug 'airblade/vim-gitgutter'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 """""""""""
@@ -113,17 +113,50 @@ let g:vimwiki_list = [{'path': '~/Documents/vimwiki/',
 
 let g:vimwiki_global_ext = 0
 
-"""""""""""""
-" ULTISNIPS "
-"""""""""""""
+"""""""
+" COC "
+"""""""
 
-let g:UltiSnipsSnippetDirectories = [$HOME.'/.snippets']
-let g:UltiSnipsEditSplit="context"
-let g:UltiSnipsExpandTrigger = "<c-j>"
-let g:UltiSnipsJumpForwardTrigger = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-nnoremap <Leader>ue :UltiSnipsEdit<cr>
-nnoremap <Leader>ur :call UltiSnips#RefreshSnippets()<cr>
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use gh to show documentation in preview window.
+nnoremap <silent> gh :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+""""""""""""
+" SNIPPETS "
+""""""""""""
+
+" Use <C-j> for both expand and jump (make expand higher priority)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+nnoremap <Leader>ue :CocCommand snippets.editSnippets<cr>
 
 """""""""""""""""
 " FINDING FILES "
@@ -142,12 +175,6 @@ set wildmode=list:longest,full
 
 " Check file in shellcheck:
 map <leader>s :!clear && shellcheck -x %<CR>
-
-""""""""""""
-" DEOPLETE "
-""""""""""""
-
-let g:deoplete#enable_at_startup = 1
 
 """"""""""""""""
 " HIGHLIGHTING "

@@ -1,0 +1,5 @@
+{
+    "snippets.userSnippetsDirectory": "~/.snippets",
+    "coc.preferences.formatOnSaveFiletypes": ["rust"],
+    "rust-analyzer.checkOnSave.command": "clippy"
+}
