@@ -198,5 +198,4 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 10%-
 
 # Screen capture
-bindsym --release Print exec scrot -e 'mv $f ~/Pictures/'
-bindsym --release $mod+Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
+bindsym --release Print exec flameshot gui
