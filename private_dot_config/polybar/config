@@ -36,8 +36,6 @@ module-margin-right = 1
 border-color = ${colors.secondary}
 
 font-0 = "Hack Nerd Font:size=12;1"
-font-1 = "Font Awesome 5 Free Solid:size=11;1"
-font-2 = "Font Awesome 5 Brands:size=11;1"
 
 [bar/top]
 inherit = bar/main
