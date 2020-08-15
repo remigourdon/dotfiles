@@ -3,7 +3,7 @@
 !!!!!!!!!
 
 *.font: Hack Nerd Font:pixelsize=16:antialias=true:autohint=true;
-*.alpha: 250
+*.alpha: 0.8
 
 Xft.lcdfilter: lcddefault
 Xft.antialias: true
