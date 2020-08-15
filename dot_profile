@@ -21,6 +21,9 @@ export GOPATH="${HOME}/.go"
 RUSTPATH="${HOME}/.cargo"
 [ -d "${RUSTPATH}" ] && export PATH="$PATH:${RUSTPATH}/bin"
 
+# Ruby
+command -v ruby >/dev/null && export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+
 # lf
 LFCD="$GOPATH/src/github.com/gokcehan/lf/etc/lfcd.sh"
 [ -f "$LFCD" ] && . "$LFCD"
