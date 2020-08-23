@@ -179,7 +179,7 @@ bindsym $mod+Shift+equal exec gnome-calculator --class=Calculator
 for_window [class=vimwiki] move scratchpad
 for_window [class=vimwiki] resize set 1350 850
 bindsym $mod+n [class=vimwiki] scratchpad show; move position center
-bindsym $mod+Shift+n exec $term -c vimwiki -e nvim -c "cd ~/Documents/vimwiki" -c VimwikiIndex
+bindsym $mod+Shift+n exec $term -c vimwiki -e nvim -c "cd ~/Projects/wiki-public" -c VimwikiIndex
 
 #########################
 # SPECIAL KEYS BINDINGS #

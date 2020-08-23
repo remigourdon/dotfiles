@@ -108,8 +108,22 @@ let g:fzf_action = {
 " VIMWIKI "
 """""""""""
 
-let g:vimwiki_list = [{'path': '~/Documents/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+let wiki_public = {}
+let wiki_public.path = '~/Projects/wiki-public/'
+let wiki_public.syntax = 'markdown'
+let wiki_public.ext = '.md'
+
+let wiki_personal = {}
+let wiki_personal.path = '~/Documents/wiki-personal/'
+let wiki_personal.syntax = 'markdown'
+let wiki_personal.ext = '.md'
+
+let wiki_work = {}
+let wiki_work.path = '~/Projects/wiki-work/'
+let wiki_work.syntax = 'markdown'
+let wiki_work.ext = '.md'
+
+let g:vimwiki_list = [wiki_public, wiki_personal, wiki_work]
 
 let g:vimwiki_global_ext = 0
 
