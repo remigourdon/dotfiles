@@ -33,6 +33,9 @@ COMMANDS["wal"]="${HOME}/.config/rofi/scripts/wal.sh"
 # ssh
 COMMANDS["ssh"]="${HOME}/.config/rofi/scripts/ssh.sh"
 
+# apps
+COMMANDS["apps"]="${HOME}/.config/rofi/scripts/apps.sh"
+
 ############
 # GENERATE #
 ############
