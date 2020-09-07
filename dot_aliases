@@ -88,7 +88,6 @@ sshd() { ssh "${1}" sudo date -s @"$(date +%s)" ; }
 command -v nvim >/dev/null 2>&1 && alias vim='nvim'
 
 # tmux
-alias tmux='tmux -u'
 alias tml='tmux list-sessions'
 alias tma='tmux attach-session -t'
 alias tmk='tmux kill-session -t'

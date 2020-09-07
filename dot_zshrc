@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/remi/.oh-my-zsh"
 
+# Set default locale
+export LANG=en_US.UTF-8
+
 # Select theme
 ZSH_THEME="agnoster"
 
