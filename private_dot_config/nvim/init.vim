@@ -75,6 +75,9 @@ set autoindent
 set list
 set listchars=tab:>-
 
+" Enable true color
+set termguicolors
+
 """""""""""
 " AIRLINE "
 """""""""""
