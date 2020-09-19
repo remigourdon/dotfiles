@@ -36,6 +36,11 @@ if command -v chezmoi >/dev/null 2>&1 ; then
     chezmoi completion zsh > $HOME/.zsh_completions/_chezmoi
 fi
 
+# Source github-cli completion
+if command -v gh >/dev/null 2>&1 ; then
+    gh completion -s zsh > $HOME/.zsh_completions/_gh
+fi
+
 # Enable fasd with completions
 fasd_cache="${HOME}/.fasd-init-zsh"
 if [ "$(command -v fasd)" -nt "${fasd_cache}" -o ! -s "${fasd_cache}" ]; then
