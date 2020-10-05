@@ -106,6 +106,14 @@ alias json='jq .'
 # xclip
 alias clip='echo -n $(fc -l -n -1) | xclip -selection clipboard'
 
+# Docker
+alias dkps='docker ps --format "table {{.Names}}\\t{{.Image}}\\t{{.Status}}\\t{{.RunningFor}}"'
+alias dkrm='docker rm --force'
+alias dkrmi='docker rmi'
+alias dkls='docker container ls'
+alias dklsi='docker image ls'
+alias dkterm='docker exec --tty --interactive'
+
 # change directory using fasd and fzf
 unalias z
 unalias zz
