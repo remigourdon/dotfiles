@@ -145,7 +145,7 @@ newscript() { [ "$#" -eq 2 ] && touch "${1}" && chmod +x "${1}" && "${EDITOR}" -
 
 # Diff packages and open HTML report
 diffpkg () {
-    command -v pkgdiff || return 1
+    command -v pkgdiff >/dev/null 2>&1 || return 1
     tmp_dir="/tmp/pkgdiff-$(date +%s)"
     report_path="${tmp_dir}/changes_report.html"
     pkgdiff --report-path "${report_path}" "${@}" >/dev/null 2>&1
