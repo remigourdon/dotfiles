@@ -4,7 +4,7 @@ set -u # Treat unset variables and parameters as errors
 
 LAUNCHER="rofi -dmenu -i -p docs -format d"
 
-LIST="$(fd --exclude "TresoritDrive/" '.*\.(docx?|xlsx?|od[st])$' ~)"
+LIST="$(fd '.*\.(docx?|xlsx?|od[st])$' ~/Documents/)"
 
 FILTERED=$(echo "${LIST}" | ${LAUNCHER})
 

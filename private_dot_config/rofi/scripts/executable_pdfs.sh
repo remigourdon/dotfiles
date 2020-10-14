@@ -4,7 +4,7 @@ set -u # Treat unset variables and parameters as errors
 
 LAUNCHER="rofi -dmenu -i -p pdfs -format d"
 
-LIST="$(fd -e pdf --exclude "TresoritDrive/" . ~)"
+LIST="$(fd -e pdf . ~/Documents/)"
 
 FILTERED=$(echo "${LIST}" | ${LAUNCHER})
 
