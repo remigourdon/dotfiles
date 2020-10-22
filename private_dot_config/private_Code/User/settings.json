@@ -1,0 +1,8 @@
+{
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "terminal.integrated.commandsToSkipShell": [
+        "workbench.action.toggleSidebarVisibility",
+        "-workbench.action.quickOpen",
+    ],
+    "latex-workshop.view.pdf.viewer": "external"
+}
