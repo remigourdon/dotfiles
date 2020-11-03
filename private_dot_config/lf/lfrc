@@ -185,7 +185,6 @@ map gt cd ~/Data/
 map gT cd ~/.trash/
 map gc cd ~/.dotfiles/
 map gC cd ~/.config/
-map gn cd ~/.dotfiles/tools/navi/cheats/
 map gr cd ~/TresoritDrive/
 map gm cd /media/remi/
 
