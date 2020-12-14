@@ -5,4 +5,7 @@
         "-workbench.action.quickOpen",
     ],
     "latex-workshop.view.pdf.viewer": "external"
+    "[rust]": {
+        "editor.formatOnSave": true
+    }
 }
