@@ -9,12 +9,15 @@ set $mod Mod4
 set $term --no-startup-id $TERMINAL
 
 # i3-gaps
-for_window [class="^.*"] border pixel 2
-gaps inner 15
-gaps outer 15
+for_window [class="^.*"] border pixel 0
+gaps inner 8
+gaps outer 4
 
 # Modifier for moving floating windows
 floating_modifier $mod
+
+# Font
+font pango:Hack Nerd Font 10
 
 #####################
 # EXTERNAL PROGRAMS #
@@ -89,7 +92,11 @@ bindsym $mod+Shift+s	    exec loginctl lock-session
 # WINDOWS BINDINGS #
 ###################
 
+bindsym $mod+t          layout tabbed
+bindsym $mod+e          layout toggle split
+
 bindsym $mod+f		    fullscreen toggle
+bindsym $mod+Shift+f    fullscreen toggle global
 
 bindsym $mod+h		    focus left
 bindsym $mod+Shift+h	move left
@@ -112,12 +119,28 @@ bindsym $mod+Shift+q 	kill
 # Resize mode
 bindsym $mod+r 		mode "resize"
 mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize shrink height 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 20 px
+        bindsym j resize shrink height 20 px
+        bindsym k resize grow height 20 px
+        bindsym l resize grow width 20 px
+        bindsym Shift+h resize shrink width 100 px
+        bindsym Shift+j resize shrink height 100 px
+        bindsym Shift+k resize grow height 100 px
+        bindsym Shift+l resize grow width 100 px
         bindsym $mod+r mode "default"
 }
+
+##########
+# COLORS #
+##########
+
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
 
 #######################
 # WORKSPACES BINDINGS #
@@ -156,8 +179,8 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-bindsym $mod+x move workspace to output right
-bindsym $mod+z move workspace to output up
+bindsym $mod+z move workspace to output right
+bindsym $mod+x move workspace to output up
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
