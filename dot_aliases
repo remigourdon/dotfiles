@@ -106,6 +106,9 @@ alias json='jq .'
 # xclip
 alias clip='echo -n $(fc -l -n -1) | xclip -selection clipboard'
 
+# termtrack (terminal satellite tracker)
+alias termtrack='termtrack -figmntxo 1'
+
 # Docker
 alias dkps='docker ps --format "table {{.Names}}\\t{{.Image}}\\t{{.Status}}\\t{{.RunningFor}}"'
 alias dkrm='docker rm --force'
