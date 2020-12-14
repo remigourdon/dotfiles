@@ -66,6 +66,7 @@ client.background       $bg
 
 # Basic applications
 bindsym $mod+d 		    exec "rofi -show drun"
+bindsym $mod+a    exec "rofi -show window"
 bindsym $mod+o 		    exec "~/.config/rofi/scripts/bangs.sh"
 bindsym $mod+Return 	exec $term
 bindsym $mod+q          exec ",xrandr-setup"

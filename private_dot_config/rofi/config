@@ -1,2 +1,7 @@
 # Theme (light pywal)
 rofi.theme: ~/.cache/wal/colors-rofi-light.rasi
+
+# Positioning
+rofi.location: 2
+rofi.yoffset: 30px
+rofi.width: 100
