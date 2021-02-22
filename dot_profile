@@ -7,6 +7,9 @@ export BROWSER="firefox"
 export READER="zathura"
 export FILE="lf"
 
+# Local environment variables
+source "${HOME}/.profile_local"
+
 # Scripts
 SCRIPTSPATH="${HOME}/.scripts"
 [ -d "${SCRIPTSPATH}" ] && export PATH="$PATH:${SCRIPTSPATH}"
