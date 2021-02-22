@@ -84,7 +84,7 @@ bindsym $mod+Shift+r 	    restart
 
 # Floating mode
 bindsym $mod+Shift+space	floating toggle
-bindsym $mod+space		    focus mode_toggle
+bindsym $mod+space		    sticky toggle
 
 # Lock screen
 bindsym $mod+Shift+s	    exec loginctl lock-session
