@@ -45,7 +45,7 @@ height = 30
 border-bottom-size = 2
 
 modules-left = i3
-modules-center = date redshift
+modules-center = clocks redshift
 modules-right = brightness pulseaudio battery
 
 [bar/bottom]
