@@ -8,7 +8,7 @@ export READER="zathura"
 export FILE="lf"
 
 # Local environment variables
-source "${HOME}/.profile_local"
+[ -f "${HOME}/.profile_local" ] && . "${HOME}/.profile_local"
 
 # Scripts
 SCRIPTSPATH="${HOME}/.scripts"
