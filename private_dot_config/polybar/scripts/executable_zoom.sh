@@ -2,8 +2,6 @@
 # Set Zoom light on/off using webhooks
 set -Eeuo pipefail
 
-source "${HOME}/.profile_local"
-
 TRIGGER_FILE="${HOME}/.zoomison"
 
 if pgrep -x zoom >/dev/null 2>&1 ; then
