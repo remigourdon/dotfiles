@@ -102,6 +102,12 @@ alias udda='udiskie-umount --all --detach'
 
 # json
 alias json='jq .'
+telemjson() {
+    jq -sr 'add | group_by(.timestamp) | map( { "timestamp": .[0].timestamp } + reduce .[] as $point ({}; . + { ($point.id): $point.value }) )' "$@"
+}
+telemcsv() {
+    jq -sr 'add | group_by(.timestamp) | map( { "timestamp": .[0].timestamp } + reduce .[] as $point ({}; . + { ($point.id): $point.value }) ) | (.[0] | keys_unsorted), (.[] | to_entries | map(.value)) | @csv' "$@"
+}
 
 # xclip
 alias clip='echo -n $(fc -l -n -1) | xclip -selection clipboard'
