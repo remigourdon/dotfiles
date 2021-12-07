@@ -56,6 +56,5 @@ height = 35
 
 border-top-size = 2
 
-modules-left = zoom spotify
+modules-left = zoom
 modules-center = vpn wireless-network wired-network
-modules-right = tresorit
