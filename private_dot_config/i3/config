@@ -32,14 +32,8 @@ exec --no-startup-id ,xrandr-setup
 # locker
 exec --no-startup-id xss-lock -- i3lock-fancy -p
 
-# polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
 # redshift
 exec --no-startup-id redshift
-
-# tresorit
-exec --no-startup-id $HOME/.local/share/tresorit/tresorit-daemon
 
 # dunst
 exec --no-startup-id dunst
