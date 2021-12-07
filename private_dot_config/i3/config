@@ -23,9 +23,6 @@ font pango:Hack Nerd Font 10
 # EXTERNAL PROGRAMS #
 #####################
 
-# compton
-exec --no-startup-id compton
-
 # setup monitors with xrandr
 exec --no-startup-id ,xrandr-setup
 
