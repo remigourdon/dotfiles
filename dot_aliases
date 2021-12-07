@@ -28,6 +28,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+alias cdtemp="cd $(mktemp -d)"
 
 # stat
 alias octal='stat -c "%A %a %n"'
