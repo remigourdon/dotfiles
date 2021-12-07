@@ -1,0 +1,7 @@
+configuration {
+	width: 100;
+	font: "Hack Nerd Font 11";
+	location: 2;
+	yoffset: 30;
+	theme: "~/.cache/wal/colors-rofi-light.rasi";
+}

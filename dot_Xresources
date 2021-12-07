@@ -12,9 +12,3 @@ Xft.hinting: true
 Xft.hintstyle: hintslight
 Xft.rgba: rgb
 Xft.dpi: 96
-
-!!!!!!!!
-! ROFI !
-!!!!!!!!
-
-rofi.font: Hack Nerd Font 11
