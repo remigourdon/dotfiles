@@ -1,7 +1,7 @@
 # Set default programs
 export EDITOR="nvim"
 export VISUAL="nvim"
-export TERMINAL="st"
+export TERMINAL="gnome-terminal"
 export COLORTERM="truecolor"
 export BROWSER="firefox"
 export READER="zathura"

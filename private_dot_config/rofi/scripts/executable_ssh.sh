@@ -8,4 +8,4 @@ LAUNCHER="rofi -dmenu -i -p remote"
 if ! REMOTE=$(echo "${LIST}" | ${LAUNCHER}) ; then
     exit 1
 fi
-st -e ssh "${REMOTE}"
+"${TERMINAL}" -e ssh "${REMOTE}"

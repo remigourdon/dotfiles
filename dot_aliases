@@ -70,9 +70,6 @@ venv() {
 # Remove host from SSH keygen know hosts
 alias sshr='ssh-keygen -f $HOME/.ssh/known_hosts -R'
 
-# Set terminfo on SSH session
-alias ssh='TERM=st-256color ssh'
-
 # Connect to named tmux session
 ssht() {
     if [ $# -eq 1 ] ; then
