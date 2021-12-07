@@ -1,7 +1,0 @@
-[
-    {
-        "key": "ctrl+w k",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "terminalFocus"
-    },
-]
