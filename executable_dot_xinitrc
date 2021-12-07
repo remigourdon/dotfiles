@@ -4,7 +4,7 @@
 [ -e ~/.Xresources ] && xrdb ~/.Xresources
 
 # Set keyboard layout and variant
-setxkbmap -layout us -variant altgr-intl
+localectl set-x11-keymap us pc105 altgr-intl ctrl:swapcap
 
 # Reload last pywal colorscheme
 wal -R
