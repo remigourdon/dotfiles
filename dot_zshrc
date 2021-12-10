@@ -41,6 +41,10 @@ if command -v gh >/dev/null 2>&1 ; then
     gh completion -s zsh > $HOME/.zsh_completions/_gh
 fi
 
+# Source Terraform completion
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
+
 # Enable fasd with completions
 fasd_cache="${HOME}/.fasd-init-zsh"
 if [ "$(command -v fasd)" -nt "${fasd_cache}" -o ! -s "${fasd_cache}" ]; then

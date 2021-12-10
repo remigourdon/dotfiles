@@ -27,6 +27,9 @@ if command -v chezmoi >/dev/null 2>&1 ; then
     source <(chezmoi completion bash)
 fi
 
+# Source Terraform completion
+complete -C /usr/bin/terraform terraform
+
 # Enable fasd with completions
 fasd_cache="${HOME}/.fasd-init-bash"
 if [ "$(command -v fasd)" -nt "${fasd_cache}" -o ! -s "${fasd_cache}" ]; then
