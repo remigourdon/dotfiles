@@ -1,7 +1,3 @@
-# VSCode
-.vscode/
-.devcontainer/
-
 # Quilt patches
 .pc/
 patches/
