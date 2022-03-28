@@ -15,6 +15,9 @@ set $term foot
 gaps inner 8
 gaps outer 4
 
+# Border
+default_border pixel 2
+
 # Modifier for moving floating windows
 floating_modifier $mod
 
