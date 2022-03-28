@@ -6,7 +6,7 @@
 set $mod Mod4
 
 # Application launcher
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu wofi
 
 # Terminal
 set $term foot
