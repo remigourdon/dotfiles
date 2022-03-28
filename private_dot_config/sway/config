@@ -5,6 +5,9 @@
 # Modifier key
 set $mod Mod4
 
+# Application launcher
+set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
 # Terminal
 set $term foot
 
@@ -76,9 +79,7 @@ exec --no-startup-id dunst
 ##################
 
 # Basic applications
-bindsym $mod+d 		    exec "rofi -show drun"
-bindsym $mod+a    exec "rofi -show window"
-bindsym $mod+o 		    exec "~/.config/rofi/scripts/bangs.sh"
+bindsym $mod+d          exec $menu
 bindsym $mod+Return 	exec $term
 bindsym $mod+q          exec ",xrandr-setup"
 bindsym $mod+w          exec "sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs ,wallpaper-set"
