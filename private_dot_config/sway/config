@@ -18,26 +18,10 @@ gaps outer 4
 # Modifier for moving floating windows
 floating_modifier $mod
 
+bar swaybar_command waybar
+
 # TODO Font
 # font pango:Hack Nerd Font 10
-
-#######
-# BAR #
-#######
-
-bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
 
 #####################
 # EXTERNAL PROGRAMS #
