@@ -11,8 +11,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 # Terminal
 set $term foot
 
-# i3-gaps
-for_window [class="^.*"] border pixel 0
+# Gaps
 gaps inner 8
 gaps outer 4
 
@@ -82,14 +81,11 @@ bindsym $mod+q          exec ",xrandr-setup"
 bindsym $mod+w          exec "sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs ,wallpaper-set"
 bindsym $mod+Shift+W    exec "sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs ,wallpaper-set -o"
 
-# Exit i3 and log out of X session
-bindsym $mod+Shift+e 	exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
+# Exit sway and Wayland session
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
-# Reload i3 configuration
+# Reload sway configuration
 bindsym $mod+Shift+c 	    reload
-
-# Restart i3 inplace
-bindsym $mod+Shift+r 	    restart
 
 # Floating mode
 bindsym $mod+Shift+space	floating toggle
