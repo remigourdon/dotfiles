@@ -77,22 +77,19 @@ exec --no-startup-id dunst
 # Basic applications
 bindsym $mod+d          exec $menu
 bindsym $mod+Return 	exec $term
-bindsym $mod+q          exec ",xrandr-setup"
-bindsym $mod+w          exec "sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs ,wallpaper-set"
-bindsym $mod+Shift+W    exec "sxiv -t -o ~/Pictures/wallpapers/ | head -n1 | xargs ,wallpaper-set -o"
 
 # Exit sway and Wayland session
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
 # Reload sway configuration
-bindsym $mod+Shift+c 	    reload
+bindsym $mod+Shift+c reload
 
 # Floating mode
-bindsym $mod+Shift+space	floating toggle
-bindsym $mod+space		    sticky toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space       sticky toggle
 
 # Lock screen
-bindsym $mod+Shift+s	    exec swaylock -f -c 000000
+bindsym $mod+Shift+s     exec swaylock -f -c 000000
 
 ###################
 # WINDOWS BINDINGS #
