@@ -6,7 +6,7 @@
 set $mod Mod4
 
 # Terminal
-set $term --no-startup-id $TERMINAL
+set $term foot
 
 # i3-gaps
 for_window [class="^.*"] border pixel 0
@@ -16,8 +16,26 @@ gaps outer 4
 # Modifier for moving floating windows
 floating_modifier $mod
 
-# Font
-font pango:Hack Nerd Font 10
+# TODO Font
+# font pango:Hack Nerd Font 10
+
+#######
+# BAR #
+#######
+
+bar {
+    position top
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
 
 #####################
 # EXTERNAL PROGRAMS #
@@ -39,17 +57,19 @@ exec --no-startup-id dunst
 # COLORS #
 ##########
 
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
+# TODO
 
-# class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
-
-client.background       $bg
+# set_from_resource $fg i3wm.color7 #f0f0f0
+# set_from_resource $bg i3wm.color2 #f0f0f0
+# 
+# # class                 border  backgr. text indicator child_border
+# client.focused          $bg     $bg     $fg  $bg       $bg
+# client.focused_inactive $bg     $bg     $fg  $bg       $bg
+# client.unfocused        $bg     $bg     $fg  $bg       $bg
+# client.urgent           $bg     $bg     $fg  $bg       $bg
+# client.placeholder      $bg     $bg     $fg  $bg       $bg
+# 
+# client.background       $bg
 
 ##################
 # BASIC BINDINGS #
