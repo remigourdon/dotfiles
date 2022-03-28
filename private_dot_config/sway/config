@@ -47,9 +47,6 @@ bar {
 # setup monitors with xrandr
 exec --no-startup-id ,xrandr-setup
 
-# locker
-exec --no-startup-id xss-lock -- i3lock-fancy -p
-
 # redshift
 exec --no-startup-id redshift
 
@@ -99,7 +96,7 @@ bindsym $mod+Shift+space	floating toggle
 bindsym $mod+space		    sticky toggle
 
 # Lock screen
-bindsym $mod+Shift+s	    exec loginctl lock-session
+bindsym $mod+Shift+s	    exec swaylock -f -c 000000
 
 ###################
 # WINDOWS BINDINGS #
