@@ -23,8 +23,8 @@ floating_modifier $mod
 
 bar swaybar_command waybar
 
-# TODO Font
-# font pango:Hack Nerd Font 10
+# Font
+font pango:Hack Nerd Font 10
 
 #####################
 # EXTERNAL PROGRAMS #
