@@ -84,7 +84,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space       sticky toggle
 
 # Lock screen
-bindsym $mod+Shift+s     exec swaylock -f -c 000000
+bindsym $mod+Shift+s     exec swaylock --daemonize --color 000000
 
 ###################
 # WINDOWS BINDINGS #
