@@ -29,6 +29,11 @@ command -v ruby >/dev/null && export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/
 LFCD="$GOPATH/src/github.com/gokcehan/lf/etc/lfcd.sh"
 [ -f "$LFCD" ] && . "$LFCD"
 
+# Node Version Manager (nvm)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # Local binaries
 [ -d "${HOME}/.local/bin" ] && export PATH="$PATH:${HOME}/.local/bin"
 
