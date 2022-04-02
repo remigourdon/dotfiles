@@ -19,6 +19,14 @@ set $menu wofi
 # Terminal
 set $term foot
 
+# Lock screen
+# Lock screen after 10m
+# Lock screen before going to sleep
+set $screenlock swaylock --daemonize --color 000000
+exec swayidle -w \
+    timeout 600 '$screenlock' \
+    before-sleep '$screenlock'
+
 # Gaps
 gaps inner 8
 gaps outer 4
@@ -84,7 +92,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space       sticky toggle
 
 # Lock screen
-bindsym $mod+Shift+s     exec swaylock --daemonize --color 000000
+bindsym $mod+Shift+s     exec $screenlock
 
 ###################
 # WINDOWS BINDINGS #
