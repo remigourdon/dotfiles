@@ -21,11 +21,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# Shorten the displayed directory path to 3 elements
-prompt_dir() {
-    prompt_segment blue black '%(4~|.../%3~|%~)'
-}
-
 # Source navi widget
 if command -v navi >/dev/null 2>&1 ; then
     source <(navi widget zsh)
@@ -34,6 +29,11 @@ fi
 # Source chezmoi completion
 if command -v chezmoi >/dev/null 2>&1 ; then
     chezmoi completion zsh > $HOME/.zsh_completions/_chezmoi
+fi
+
+# Starship prompt
+if command -v starship >/dev/null 2>&1 ; then
+    eval "$(starship init zsh)"
 fi
 
 # Source github-cli completion
