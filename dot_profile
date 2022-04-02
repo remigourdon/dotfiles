@@ -1,7 +1,7 @@
 # Set default programs
 export EDITOR="nvim"
 export VISUAL="nvim"
-export TERMINAL="gnome-terminal"
+export TERMINAL="foot"
 export COLORTERM="truecolor"
 export BROWSER="firefox"
 export READER="zathura"
@@ -29,8 +29,26 @@ command -v ruby >/dev/null && export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/
 LFCD="$GOPATH/src/github.com/gokcehan/lf/etc/lfcd.sh"
 [ -f "$LFCD" ] && . "$LFCD"
 
+# Node Version Manager (nvm)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # Local binaries
 [ -d "${HOME}/.local/bin" ] && export PATH="$PATH:${HOME}/.local/bin"
 
 # Start X11 server if i3 is not already running
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx
+
+# Start keyring
+case "${DESKTOP_SESSION}" in
+    i3)
+        export $(gnome-keyring-daemon --start)
+        ;;
+    sway)
+        export $(gnome-keyring-daemon --start)
+        ;;
+    sway-nvidia)
+        export $(gnome-keyring-daemon --start)
+        ;;
+esac

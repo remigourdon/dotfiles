@@ -1,0 +1,209 @@
+#################
+# MISCELLANEOUS #
+#################
+
+# Fix issue with slow start for GTK applications
+# https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+#####################
+# BASIC DEFINITIONS #
+#####################
+
+# Modifier key
+set $mod Mod4
+
+# Application launcher
+set $menu wofi
+
+# Terminal
+set $term foot
+
+# Lock screen
+# Lock screen after 10m
+# Lock screen before going to sleep
+set $screenlock swaylock --daemonize --color 000000
+exec swayidle -w \
+    timeout 600 '$screenlock' \
+    before-sleep '$screenlock'
+
+# Gaps
+gaps inner 8
+gaps outer 4
+
+# Border
+default_border pixel 2
+
+# Modifier for moving floating windows
+floating_modifier $mod
+
+bar swaybar_command waybar
+
+# Font
+font pango:Hack Nerd Font 10
+
+#####################
+# EXTERNAL PROGRAMS #
+#####################
+
+# setup monitors with xrandr
+exec --no-startup-id ,xrandr-setup
+
+# redshift
+exec --no-startup-id redshift
+
+# dunst
+exec --no-startup-id dunst
+
+##########
+# COLORS #
+##########
+
+# TODO
+
+# set_from_resource $fg i3wm.color7 #f0f0f0
+# set_from_resource $bg i3wm.color2 #f0f0f0
+# 
+# # class                 border  backgr. text indicator child_border
+# client.focused          $bg     $bg     $fg  $bg       $bg
+# client.focused_inactive $bg     $bg     $fg  $bg       $bg
+# client.unfocused        $bg     $bg     $fg  $bg       $bg
+# client.urgent           $bg     $bg     $fg  $bg       $bg
+# client.placeholder      $bg     $bg     $fg  $bg       $bg
+# 
+# client.background       $bg
+
+##################
+# BASIC BINDINGS #
+##################
+
+# Basic applications
+bindsym $mod+d          exec $menu
+bindsym $mod+Return 	exec $term
+
+# Exit sway and Wayland session
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+# Reload sway configuration
+bindsym $mod+Shift+c reload
+
+# Floating mode
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space       sticky toggle
+
+# Lock screen
+bindsym $mod+Shift+s     exec $screenlock
+
+###################
+# WINDOWS BINDINGS #
+###################
+
+bindsym $mod+t          layout tabbed
+bindsym $mod+e          layout toggle split
+
+bindsym $mod+f		    fullscreen toggle
+bindsym $mod+Shift+f    fullscreen toggle global
+
+bindsym $mod+h		    focus left
+bindsym $mod+Shift+h	move left
+
+bindsym $mod+j		    focus down
+bindsym $mod+Shift+j	move down
+
+bindsym $mod+k		    focus up
+bindsym $mod+Shift+k	move up
+
+bindsym $mod+l		    focus right
+bindsym $mod+Shift+l	move right
+
+bindsym $mod+s		    split v
+
+bindsym $mod+v		    split h
+
+bindsym $mod+Shift+q 	kill
+
+# Resize mode
+bindsym $mod+r 		mode "resize"
+mode "resize" {
+        bindsym h resize shrink width 20 px
+        bindsym j resize shrink height 20 px
+        bindsym k resize grow height 20 px
+        bindsym l resize grow width 20 px
+        bindsym Shift+h resize shrink width 100 px
+        bindsym Shift+j resize shrink height 100 px
+        bindsym Shift+k resize grow height 100 px
+        bindsym Shift+l resize grow width 100 px
+        bindsym $mod+r mode "default"
+}
+
+##########
+# COLORS #
+##########
+
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
+#######################
+# WORKSPACES BINDINGS #
+#######################
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+bindsym $mod+z move workspace to output right
+bindsym $mod+x move workspace to output up
+
+#########################
+# SPECIAL KEYS BINDINGS #
+#########################
+
+# File manager
+bindsym $mod+m exec --no-startup-id $term -e bash -c 'tmux new-session -A -s lf lf'
+
+# Volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl --min-value=5 s +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-value=5 s 5%-
+
+# Screen capture
+bindsym --release Print       exec grimshot --notify save window
+bindsym --release Shift+Print exec grimshot --notify save area
