@@ -3,6 +3,17 @@ abbr -ga rm 'rm -i'
 abbr -ga cp 'cp -i'
 abbr -ga mv 'mv -i'
 
+# ls and exa
+if command -v exa >/dev/null 2>&1
+    abbr -ga ls 'exa --group-directories-first'
+    abbr -ga ll 'exa --group-directories-first --long'
+    abbr -ga la 'exa --group-directories-first --long --all'
+else
+    abbr -ga ls 'ls --color auto --group-directories-first'
+    abbr -ga ll 'ls --color auto --group-directories-first -l --human-readable'
+    abbr -ga la 'ls --color auto --group-directories-first -l --all --human-readable'
+end
+
 # lsblk
 abbr -ga lk 'lsblk'
 
