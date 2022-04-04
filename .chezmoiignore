@@ -3,6 +3,7 @@ Makefile
 *.deb
 *.tar.gz
 .vscode
+LICENSE
 {{- if ne .chezmoi.os "linux" }}
 .hushlogin
 {{- end }}
