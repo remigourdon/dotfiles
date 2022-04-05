@@ -1,3 +1,7 @@
+# asdf
+.tool-versions
+.envrc
+
 # Quilt patches
 .pc/
 patches/
