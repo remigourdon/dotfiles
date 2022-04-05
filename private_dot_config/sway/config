@@ -46,9 +46,6 @@ font pango:Hack Nerd Font 10
 # EXTERNAL PROGRAMS #
 #####################
 
-# Run monitor configuration script
-exec --no-startup-id ,wlr-randr-setup
-
 # redshift
 exec --no-startup-id redshift
 
@@ -82,7 +79,7 @@ bindsym $mod+d          exec $menu
 bindsym $mod+Return 	exec $term
 
 # Run monitor configuration script
-bindsym $mod+q          exec ,wlr-randr-setup
+bindsym $mod+q          exec ',wlr-randr-setup'
 
 # Exit sway and Wayland session
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
