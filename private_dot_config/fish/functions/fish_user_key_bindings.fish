@@ -1,5 +1,8 @@
 function fish_user_key_bindings
 
+    # Bindings
+    bind --mode insert \cw forward-word
+
     # FZF
     fzf_key_bindings
 
