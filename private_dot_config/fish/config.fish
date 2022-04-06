@@ -10,7 +10,10 @@ if status is-interactive
     [ -f ~/.fzf/shell/key-bindings.fish ] && source ~/.fzf/shell/key-bindings.fish
 
     # Enable asdf
-    [ -f ~/.asdf/asdf.fish ] && source ~/.asdf/asdf.fish
+    if [ -d "${HOME}/.asdf" ]
+        source ~/.asdf/asdf.fish
+        asdf exec direnv hook fish | source
+    end
 
     # Use starship for the prompt
     starship init fish | source
