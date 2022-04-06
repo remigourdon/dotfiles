@@ -9,6 +9,12 @@ if status is-interactive
     # Load FZF keybindings function
     [ -f ~/.fzf/shell/key-bindings.fish ] && source ~/.fzf/shell/key-bindings.fish
 
+    # Enable asdf
+    if [ -d "$HOME/.asdf" ]
+        source "$HOME/.asdf/asdf.fish"
+        asdf exec direnv hook fish | source
+    end
+
     # Use starship for the prompt
     starship init fish | source
 

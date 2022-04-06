@@ -36,6 +36,13 @@ fi
 source "${fasd_cache}"
 unset fasd_cache
 
+# Enable asdf
+if [ -d "${HOME}/.asdf" ] ; then
+    source "${HOME}/.asdf/asdf.sh"
+    source "${HOME}/.asdf/completions/asdf.bash"
+    eval "$(asdf exec direnv hook bash)"
+fi
+
 # Enable fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
