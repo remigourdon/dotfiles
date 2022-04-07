@@ -4,7 +4,9 @@
 
 # Fix issue with slow start for GTK applications
 # https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
-exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+# Also pulls XDG_CURRENT_DESKTOP for xdg-desktop-portal-wlr to work
+# https://github.com/emersion/xdg-desktop-portal-wlr
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway
 
 #####################
 # BASIC DEFINITIONS #
