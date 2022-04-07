@@ -140,6 +140,10 @@ label:focus {
     color: #ffffff;
 }
 
+#pulseaudio.source-muted {
+    color: #ff0000;
+}
+
 #temperature {
 }
 
