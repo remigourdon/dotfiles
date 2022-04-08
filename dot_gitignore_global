@@ -1,3 +1,6 @@
+# Python virtual environment
+venv/
+
 # asdf
 .tool-versions
 .envrc
