@@ -38,7 +38,8 @@
         "interval": 1,
         "timezones": [
             "America/New_York",
-            "UTC"
+            "UTC",
+            "Europe/Paris"
         ],
         // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%Y-%m-%d %H:%M:%S %Z}"
