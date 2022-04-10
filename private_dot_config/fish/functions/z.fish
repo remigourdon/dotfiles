@@ -1,4 +1,4 @@
-function z -d "Change directory to first match"
+function z -d "Change directory to first fasd directory match"
     if count $argv > 0
         fasd_cd -d "$argv"
     else
