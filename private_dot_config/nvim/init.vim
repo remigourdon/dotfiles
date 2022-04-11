@@ -10,7 +10,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'sirver/ultisnips'
 Plug 'jiangmiao/auto-pairs'
 Plug 'lfv89/vim-interestingwords'
 Plug 'airblade/vim-gitgutter'
