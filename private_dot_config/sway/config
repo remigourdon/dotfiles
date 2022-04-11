@@ -44,6 +44,21 @@ bar swaybar_command waybar
 # Font
 font pango:Hack Nerd Font 10
 
+##########
+# INPUTS #
+##########
+
+input "type:keyboard" {
+    xkb_layout us(altgr-intl)
+    xkb_options ctrl:nocaps
+}
+
+input "type:touchpad" {
+    tap enabled
+    natural_scroll enabled
+    dwt enabled # disable-while-typing
+}
+
 #####################
 # EXTERNAL PROGRAMS #
 #####################
