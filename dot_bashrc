@@ -44,7 +44,26 @@ if [ -d "${HOME}/.asdf" ] ; then
 fi
 
 # Enable fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if [ -f ~/.fzf.bash ] ; then
+    source ~/.fzf.bash
+    if command -v fd &>/dev/null ; then
+        export FZF_DEFAULT_COMMAND="fd"
+        export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
+        export FZF_ALT_C_COMMAND="${FZF_DEFAULT_COMMAND} --type d"
+    fi
+    export FZF_DEFAULT_OPTS="
+      --layout=reverse
+      --info=inline
+      --height=80%
+      --prompt='∼ ' --pointer='▶' --marker='✓'
+      --bind '?:toggle-preview'
+      --bind 'ctrl-a:select-all'
+      --bind 'ctrl-alt-a:deselect-all'
+      --bind 'ctrl-y:execute-silent(echo {+} | wl-copy)'
+      --bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
+      --bind 'ctrl-v:execute(code {+})'
+    "
+fi
 
 # Setup aliases
 [ -e "${HOME}/.aliases" ] && source "${HOME}/.aliases"
