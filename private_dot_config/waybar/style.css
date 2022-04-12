@@ -140,7 +140,7 @@ label:focus {
     color: #ffffff;
 }
 
-#pulseaudio.source-muted {
+#pulseaudio.in.source-muted {
     color: #ff0000;
 }
 
