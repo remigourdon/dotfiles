@@ -1,7 +1,7 @@
 {{- if contains "home" .chezmoi.hostname }}
 [user]
-    name = {{ .name }}
-    email = {{ .email }}
+    name = {{ .home.name }}
+    email = {{ .home.email }}
 {{- else }}
 [user]
     name = {{ .work.name }}

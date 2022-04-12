@@ -8,8 +8,8 @@ config_local() {
     echo "Configuring local user in ${dest}"
     (
         cd "${dest}"
-        git config --local user.name "{{ .name }}"
-        git config --local user.email "{{ .email }}"
+        git config --local user.name "{{ .home.name }}"
+        git config --local user.email "{{ .home.email }}"
     )
 {{- end }}
 }
