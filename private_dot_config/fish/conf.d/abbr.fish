@@ -41,9 +41,5 @@ abbr -ga udd 'udiskie-umount --force --detach'
 abbr -ga udda 'udiskie-umount --all --detach'
 
 # Docker
-abbr -ga dkps 'docker ps --format "table {{.Names}}\\t{{.Image}}\\t{{.Status}}\\t{{.RunningFor}}"'
-abbr -ga dkrm 'docker rm --force'
-abbr -ga dkrmi 'docker rmi'
 abbr -ga dkls 'docker container ls'
 abbr -ga dklsi 'docker image ls'
-abbr -ga dkterm 'docker exec --tty --interactive'
