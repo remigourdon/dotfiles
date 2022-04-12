@@ -15,6 +15,7 @@ Plug 'lfv89/vim-interestingwords'
 Plug 'airblade/vim-gitgutter'
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dag/vim-fish'
 call plug#end()
 
 """""""""""
