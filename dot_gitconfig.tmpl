@@ -27,7 +27,7 @@
     # Utils
     main-branch = !basename $(git symbolic-ref refs/remotes/origin/HEAD)
     gitignore-list = !curl -L -s "https://www.gitignore.io/api/list" | tr ',' '\n'
-    fuzzy-index = !git status --short | fzf -0 -m --preview 'bat --color=always {2}' | cut -d ' ' -f 2-
+    fuzzy-index = !git -c color.status=always status --short | fzf --ansi -0 -m --preview 'bat --color=always {2}' | cut -d ' ' -f 2-
 
     # Basics
     s = status
