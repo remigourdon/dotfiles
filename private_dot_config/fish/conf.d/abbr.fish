@@ -24,19 +24,7 @@ abbr -ga grep 'grep --color=auto'
 abbr -ga diff 'diff --unified --color=auto'
 
 # git
-abbr -ga gs 'git status'
-abbr -ga gl 'git log --all --decorate --oneline --graph'
-abbr -ga gd 'git diff'
-abbr -ga ga 'git add'
-abbr -ga gaa 'git add .'
-abbr -ga gap 'git add --patch'
-abbr -ga gb 'git branch'
-abbr -ga gc 'git commit'
-abbr -ga gco 'git checkout'
-abbr -ga gco 'git clean'
-abbr -ga gcm 'git commit --message'
-abbr -ga gca 'git commit --amend'
-abbr -ga gri 'git rebase --interactive'
+abbr -ga g 'git'
 
 # tmux
 abbr -ga tml 'tmux list-sessions'

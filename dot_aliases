@@ -46,17 +46,7 @@ alias grep='grep --color=auto'
 alias diff='diff -u --color=auto'
 
 # git
-alias gs='git status'
-alias gl='git log --all --decorate --oneline --graph'
-alias gd='git diff'
-alias ga='git add'
-alias gaa='git add .'
-alias gap='git add --patch'
-alias gb='git branch'
-alias gc='git commit'
-alias gcm='git commit -m'
-alias gca='git commit --amend'
-alias gri='git rebase --interactive'
+alias g='git'
 
 # Activate python virtual environment
 venv() {
