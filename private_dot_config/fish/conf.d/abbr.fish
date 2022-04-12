@@ -25,6 +25,7 @@ abbr -ga diff 'diff --unified --color=auto'
 
 # git
 abbr -ga g 'git'
+abbr -ga gs 'cowsay -f tux "Put git aliases in your muscle memory!"'
 
 # tmux
 abbr -ga tml 'tmux list-sessions'
