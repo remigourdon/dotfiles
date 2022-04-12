@@ -216,3 +216,6 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 
 " Always write when losing focus
 :au FocusLost * :wa
+
+" Run chezmoi apply automatically
+autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path "%"
