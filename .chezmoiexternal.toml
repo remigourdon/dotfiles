@@ -2,3 +2,13 @@
     type = "file"
     url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
     refreshPeriod = "168h"
+
+[".local/bin/tldr"]
+    type = "file"
+    url = "https://github.com/dbrgn/tealdeer/releases/download/v1.5.0/tealdeer-linux-x86_64-musl"
+    executable = true
+    refreshPeriod = "168h"
+[".config/fish/completions/tldr.fish"]
+    type = "file"
+    url = "https://github.com/dbrgn/tealdeer/releases/download/v1.5.0/completions_fish"
+    refreshPeriod = "168h"
