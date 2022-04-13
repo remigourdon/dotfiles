@@ -65,5 +65,9 @@ if [ -f ~/.fzf.bash ] ; then
     "
 fi
 
+# broot wrapper script
+broot_wrapper="${HOME}/.config/broot/launcher/bash/br"
+[ -f "${broot_wrapper}" ] && source "${broot_wrapper}"
+
 # Setup aliases
 [ -e "${HOME}/.aliases" ] && source "${HOME}/.aliases"
