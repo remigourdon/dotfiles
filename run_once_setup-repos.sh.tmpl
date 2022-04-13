@@ -29,6 +29,7 @@ config_local "{{ .chezmoi.sourceDir }}"
 declare -A REPOS
 REPOS["git@github.com:remigourdon/scripts.git"]="${HOME}/.scripts"
 REPOS["git@github.com:remigourdon/snippets.git"]="${HOME}/.snippets"
+REPOS["git@github.com:remigourdon/cheats.git"]="${HOME}/.local/share/tealdeer/cheats"
 
 for repo in "${!REPOS[@]}" ; do
     clone_repo "${repo}" "${REPOS[${repo}]}" || true
