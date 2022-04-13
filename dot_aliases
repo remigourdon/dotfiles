@@ -48,6 +48,9 @@ alias diff='diff -u --color=auto'
 # git
 alias g='git'
 
+# jless
+alias yless='jless --yaml'
+
 # Activate python virtual environment
 venv() {
     if [ $# -eq 1 ] ; then
