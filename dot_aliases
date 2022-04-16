@@ -51,6 +51,9 @@ alias g='git'
 # jless
 alias yless='jless --yaml'
 
+# vidir
+alias vidir='vidir --verbose'
+
 # Activate python virtual environment
 venv() {
     if [ $# -eq 1 ] ; then

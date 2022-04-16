@@ -46,3 +46,6 @@ abbr -ga dklsi 'docker image ls'
 
 # jless
 abbr -ga yless 'jless --yaml'
+
+# vidir
+abbr -ga vidir 'vidir --verbose'
