@@ -37,9 +37,11 @@
     aa = add .
     b = branch
     c = commit
-    cm = commit -m
+    cm = commit --message
+    cma = commit --all --message
     ca = commit --amend
     ri = rebase --interactive
+    f = fetch
 
     # Fuzzy
     a = ![ "${#}" -gt 0 ] && git add "${@}" || git fuzzy-index | xargs --no-run-if-empty git add
