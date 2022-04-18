@@ -93,6 +93,9 @@ exec --no-startup-id dunst
 
 # Basic applications
 bindsym $mod+d          exec $menu
+for_window [app_id="^term-launcher$"] floating enable
+for_window [title="^term-launcher$"] floating enable
+bindsym $mod+p          exec ',term-launcher'
 bindsym $mod+Return 	exec $term
 
 # Run monitor configuration script
