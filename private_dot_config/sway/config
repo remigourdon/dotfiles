@@ -15,9 +15,6 @@ exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSO
 # Modifier key
 set $mod Mod4
 
-# Application launcher
-set $menu wofi
-
 # Terminal
 set $term foot
 
@@ -91,11 +88,12 @@ exec --no-startup-id dunst
 # BASIC BINDINGS #
 ##################
 
-# Basic applications
-bindsym $mod+d          exec $menu
+# Launcher
 for_window [app_id="^term-launcher$"] floating enable
 for_window [title="^term-launcher$"] floating enable
-bindsym $mod+p          exec ',term-launcher'
+bindsym $mod+d          exec ',term-launcher applications'
+
+# Terminal
 bindsym $mod+Return 	exec $term
 
 # Run monitor configuration script
