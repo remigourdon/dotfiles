@@ -63,8 +63,8 @@ input "type:touchpad" {
 # redshift
 exec --no-startup-id redshift
 
-# dunst
-exec --no-startup-id dunst
+# mako (notifier)
+exec --no-startup-id mako
 
 ##########
 # COLORS #
