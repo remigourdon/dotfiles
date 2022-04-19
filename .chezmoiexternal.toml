@@ -12,17 +12,14 @@
     type = "file"
     url = "https://github.com/dbrgn/tealdeer/releases/download/v1.5.0/tealdeer-linux-x86_64-musl"
     executable = true
-    refreshPeriod = "168h"
 [".config/fish/completions/tldr.fish"]
     type = "file"
     url = "https://github.com/dbrgn/tealdeer/releases/download/v1.5.0/completions_fish"
-    refreshPeriod = "168h"
 
 [".local/bin/hexyl"]
     type = "file"
     url = "https://github.com/sharkdp/hexyl/releases/download/v0.9.0/hexyl-v0.9.0-x86_64-unknown-linux-gnu.tar.gz"
     executable = true
-    refreshPeriod = "168h"
     [".local/bin/hexyl".filter]
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "hexyl-v0.9.0-x86_64-unknown-linux-gnu/hexyl"]
@@ -31,7 +28,6 @@
     type = "file"
     url = "https://github.com/watchexec/watchexec/releases/download/cli-v1.18.12/watchexec-1.18.12-x86_64-unknown-linux-gnu.tar.xz"
     executable = true
-    refreshPeriod = "168h"
     [".local/bin/watchexec".filter]
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--xz", "--to-stdout", "watchexec-1.18.12-x86_64-unknown-linux-gnu/watchexec"]
