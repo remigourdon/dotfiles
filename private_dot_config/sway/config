@@ -69,6 +69,9 @@ exec --no-startup-id redshift
 # mako (notifier)
 exec --no-startup-id mako
 
+# Set up monitors
+exec_always ',wlr-randr-setup'
+
 ##########
 # COLORS #
 ##########
