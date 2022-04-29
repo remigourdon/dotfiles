@@ -72,6 +72,9 @@ exec --no-startup-id mako
 # Set up monitors
 exec_always ',wlr-randr-setup'
 
+# Clipboard manager
+exec wl-paste --watch cliphist store
+
 ##########
 # COLORS #
 ##########
