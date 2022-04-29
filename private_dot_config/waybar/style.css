@@ -59,9 +59,6 @@ window#waybar.solo {
 
 #clock,
 #battery,
-#cpu,
-#memory,
-#temperature,
 #backlight,
 #network,
 #pulseaudio,
@@ -116,13 +113,6 @@ window#waybar.solo {
 label:focus {
 }
 
-#cpu {
-    color: #ffffff;
-}
-
-#memory {
-}
-
 #backlight {
 }
 
@@ -143,12 +133,6 @@ label:focus {
 
 #pulseaudio.in.source-muted {
     color: #ff0000;
-}
-
-#temperature {
-}
-
-#temperature.critical {
 }
 
 #idle_inhibitor {
