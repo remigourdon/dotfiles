@@ -18,6 +18,9 @@ set $mod Mod4
 # Terminal
 set $term foot
 
+# Wallpaper
+output "*" bg $HOME/.wallpaper fill "#000000"
+
 # Lock screen
 # Lock screen after 10m
 # Lock screen before going to sleep
