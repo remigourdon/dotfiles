@@ -31,3 +31,16 @@
     [".local/bin/watchexec".filter]
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--xz", "--to-stdout", "watchexec-1.18.12-x86_64-unknown-linux-gnu/watchexec"]
+
+[".local/bin/lf"]
+    type = "file"
+    url = "https://github.com/gokcehan/lf/releases/download/r27/lf-linux-amd64.tar.gz"
+    executable = true
+    [".local/bin/lf".filter]
+        command = "tar"
+        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "lf"]
+
+[".local/bin/cliphist"]
+    type = "file"
+    url = "https://github.com/sentriz/cliphist/releases/download/v0.3.1/v0.3.1-linux-amd64"
+    executable = true
