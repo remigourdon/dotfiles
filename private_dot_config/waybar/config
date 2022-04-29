@@ -68,7 +68,7 @@
         "format-ethernet": "",
         "tooltip-format": "{ifname} via {gwaddr} ➔ {ipaddr}/{cidr}",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "⚠",
+        "format-disconnected": "",
         "format-alt": "{essid} ({signalStrength}%) ",
     },
     "pulseaudio#out": {
