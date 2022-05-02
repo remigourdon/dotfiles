@@ -100,6 +100,7 @@ exec wl-paste --watch cliphist store
 # Launcher
 for_window [app_id="^term-launcher$"] floating enable
 for_window [title="^term-launcher$"] floating enable
+bindsym $mod+a          exec ',term-launcher windows'
 bindsym $mod+d          exec ',term-launcher applications'
 bindsym $mod+p          exec ',term-launcher'
 
