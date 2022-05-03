@@ -51,6 +51,7 @@ set autowriteall
 """""""""""""
 
 au BufRead,BufNewFile *.source setfiletype sh
+au BufRead,BufNewFile *.mjs setfiletype javascript
 
 """"""""""
 " DISLAY "
