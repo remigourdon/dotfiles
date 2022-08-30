@@ -16,6 +16,10 @@
     type = "file"
     url = "https://github.com/dbrgn/tealdeer/releases/download/v1.5.0/completions_fish"
 
+[".config/fish/completions/docker.fish"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish"
+
 [".local/bin/hexyl"]
     type = "file"
     url = "https://github.com/sharkdp/hexyl/releases/download/v0.9.0/hexyl-v0.9.0-x86_64-unknown-linux-gnu.tar.gz"
