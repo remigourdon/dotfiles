@@ -65,6 +65,14 @@ if [ -f ~/.fzf.bash ] ; then
     "
 fi
 
+# k8s
+if command -v kubectl &>/dev/null ; then
+    source <(kubectl completion bash)
+fi
+if command -v flux &>/dev/null ; then
+    source <(flux completion bash)
+fi
+
 # broot wrapper script
 broot_wrapper="${HOME}/.config/broot/launcher/bash/br"
 [ -f "${broot_wrapper}" ] && source "${broot_wrapper}"
