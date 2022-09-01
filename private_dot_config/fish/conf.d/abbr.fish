@@ -44,6 +44,9 @@ abbr -ga udda 'udiskie-umount --all --detach'
 abbr -ga dkls 'docker container ls'
 abbr -ga dklsi 'docker image ls'
 
+# k8s
+abbr -ga kc 'kubectl'
+
 # jless
 abbr -ga yless 'jless --yaml'
 
