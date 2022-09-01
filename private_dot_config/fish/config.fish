@@ -37,8 +37,12 @@ if status is-interactive
     # Use starship for the prompt
     starship init fish | source
 
+    # k8s
     if command -v kubectl &>/dev/null
         kubectl completion fish | source
+    end
+    if command -v flux &>/dev/null
+        flux completion fish | source
     end
 
 end
