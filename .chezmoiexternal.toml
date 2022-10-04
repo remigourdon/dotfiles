@@ -49,6 +49,14 @@
     url = "https://github.com/sentriz/cliphist/releases/download/v0.3.1/v0.3.1-linux-amd64"
     executable = true
 
+[".local/bin/tokei"]
+    type = "file"
+    url = "https://github.com/XAMPPRocky/tokei/releases/download/v12.1.2/tokei-i686-unknown-linux-gnu.tar.gz"
+    executable = true
+    [".local/bin/tokei".filter]
+        command = "tar"
+        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "tokei"]
+
 [".local/bin/glow"]
     type = "file"
     url = "https://github.com/charmbracelet/glow/releases/download/v1.4.1/glow_1.4.1_linux_x86_64.tar.gz"
