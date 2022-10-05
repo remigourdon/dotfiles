@@ -57,6 +57,14 @@
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "tokei"]
 
+[".local/bin/procs"]
+    type = "file"
+    url = "https://github.com/dalance/procs/releases/download/v0.13.2/procs-v0.13.2-x86_64-linux.zip"
+    executable = true
+    [".local/bin/procs".filter]
+        command = ",unzip-from-stdin"
+        args = ["procs"]
+
 [".local/bin/glow"]
     type = "file"
     url = "https://github.com/charmbracelet/glow/releases/download/v1.4.1/glow_1.4.1_linux_x86_64.tar.gz"
