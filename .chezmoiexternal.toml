@@ -85,3 +85,8 @@
     type = "file"
     url = "https://github.com/akavel/up/releases/download/v0.4/up"
     executable = true
+
+[".local/bin/dasel"]
+    type = "file"
+    url = "https://github.com/TomWright/dasel/releases/download/v1.27.1/dasel_linux_amd64"
+    executable = true
