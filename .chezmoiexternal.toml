@@ -80,3 +80,8 @@
     [".local/bin/glow".filter]
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "glow"]
+
+[".local/bin/up"]
+    type = "file"
+    url = "https://github.com/akavel/up/releases/download/v0.4/up"
+    executable = true
