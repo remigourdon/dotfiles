@@ -98,3 +98,11 @@
     [".local/bin/gron".filter]
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "gron"]
+
+[".local/bin/usql"]
+    type = "file"
+    url = "https://github.com/xo/usql/releases/download/v0.12.13/usql-0.12.13-linux-amd64.tar.bz2"
+    executable = true
+    [".local/bin/usql".filter]
+        command = "tar"
+        args = ["--extract", "--file", "/dev/stdin", "--bzip2", "--to-stdout", "usql"]
