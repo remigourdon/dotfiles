@@ -116,7 +116,9 @@ alias dkrmi='docker rmi'
 alias dkls='docker container ls'
 alias dklsi='docker image ls'
 alias dkterm='docker exec --tty --interactive'
-alias kc='kubectl'
+
+# k8s
+alias k='kubectl'
 
 # change directory using fasd and fzf
 unalias z
