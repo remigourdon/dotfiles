@@ -1,9 +1,6 @@
 # Python virtual environment
 venv/
 
-# VSCode
-.vscode/
-
 # asdf
 .tool-versions
 .envrc
