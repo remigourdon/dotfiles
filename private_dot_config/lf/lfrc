@@ -103,14 +103,6 @@ cmd uarchivemount ${{
     fi
 }}
 
-# fasd
-cmd fasdz ${{
-    fasd -Rdl | ~/.fzf/bin/fzf -1 -0 --no-sort +m | xargs -I{} lf -remote "send $id cd \"{}\""
-}}
-cmd fasdv ${{
-    fasd -Rfl | ~/.fzf/bin/fzf -1 -0 --no-sort +m | xargs -r "${EDITOR}"
-}}
-
 ##############
 # UNMAPPINGS #
 ##############
@@ -166,10 +158,6 @@ map rM delete
 
 # umounts
 map Ua :uarchivemount
-
-# fasd
-map fz :fasdz
-map fv :fasdv
 
 # gotos
 map gh cd ~/

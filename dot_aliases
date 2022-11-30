@@ -120,14 +120,6 @@ alias dkterm='docker exec --tty --interactive'
 # k8s
 alias k='kubectl'
 
-# change directory using fasd and fzf
-unalias z
-unalias zz
-z() {
-    [ $# -gt 0 ] && fasd_cd -d "$*" && return
-    cd "$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)"
-}
-
 # Display CSV
 csv() {
     if [ "$#" -ne 0 ] ; then
