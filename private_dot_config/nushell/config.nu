@@ -513,3 +513,6 @@ let-env config = {
 
 # Starship prompt
 source ~/.cache/starship/init.nu
+
+# Enable zoxide
+source ~/.zoxide.nu

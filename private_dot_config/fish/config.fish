@@ -28,6 +28,9 @@ if status is-interactive
         "
     end
 
+    # Enable zoxide
+    zoxide init fish | source
+
     # Enable asdf
     if [ -d "$HOME/.asdf" ]
         source "$HOME/.asdf/asdf.fish"

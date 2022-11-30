@@ -28,6 +28,9 @@ fi
 # Source Terraform completion
 complete -C /usr/bin/terraform terraform
 
+# Enable zoxide
+eval "$(zoxide init bash)"
+
 # Enable asdf
 if [ -d "${HOME}/.asdf" ] ; then
     source "${HOME}/.asdf/asdf.sh"
