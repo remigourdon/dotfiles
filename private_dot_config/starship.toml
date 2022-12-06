@@ -1,0 +1,11 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = "${custom.taskwarrior}$all"
+
+[custom.taskwarrior]
+command = "task +READY export rc.json.array=on | jq 'length'"
+when = "command -v task"
+symbol = "✓"
+style = "bold green"
+format = "[$symbol ($output )]($style)"
+shell = ["/usr/bin/env", "bash"]
