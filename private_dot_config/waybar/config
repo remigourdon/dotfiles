@@ -6,7 +6,7 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["clock"],
+    "modules-center": ["clock", "custom/taskwarrior"],
     "modules-right": ["idle_inhibitor", "pulseaudio#out", "pulseaudio#in", "network", "backlight", "battery"],
     // Modules configuration
     // "sway/workspaces": {
@@ -104,6 +104,12 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol --tab 4"
+    },
+    "custom/taskwarrior": {
+        "format": "✓ {}",
+        "interval": 5,
+        "exec": "task +ACTIVE export rc.json.array=on | jq --raw-output 'sort_by(.urgency) | reverse | \"\\(.[0].description) @ \\(.[0].project)\"'",
+        "exec-if": "task +ACTIVE export rc.json.array=on | jq --exit-status 'length > 0' >/dev/null 2>&1"
     }
 }
 
