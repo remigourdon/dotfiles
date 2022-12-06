@@ -49,6 +49,7 @@ abbr -ga k 'kubectl'
 
 # Taskwarrior
 abbr -ga t 'task'
+abbr -ga tui 'taskwarrior-tui'
 
 # jless
 abbr -ga yless 'jless --yaml'
