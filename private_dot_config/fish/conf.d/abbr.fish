@@ -47,6 +47,9 @@ abbr -ga dklsi 'docker image ls'
 # k8s
 abbr -ga k 'kubectl'
 
+# Taskwarrior
+abbr -ga t 'task'
+
 # jless
 abbr -ga yless 'jless --yaml'
 

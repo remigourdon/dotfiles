@@ -120,6 +120,9 @@ alias dkterm='docker exec --tty --interactive'
 # k8s
 alias k='kubectl'
 
+# Taskwarrior
+alias t='task'
+
 # Display CSV
 csv() {
     if [ "$#" -ne 0 ] ; then
