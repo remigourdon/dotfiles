@@ -73,7 +73,7 @@ uda.gmaillabels.label=GMail labels
 ###############
 
 # active
-report.active.columns=id,start,start.age,entry.age,depends.indicator,priority,project,tags,recur,wait,scheduled.remaining,due,until,ticket,description
+report.active.columns=id,start,start.age,entry.age,depends.indicator,priority,project,tags,recur,wait,scheduled.remaining,due,until,ticket,description.count
 report.active.labels=ID,Started,Active,Age,D,P,Project,Tags,Recur,W,Sch,Due,Until,Ticket,Description
 
 # all
@@ -89,7 +89,7 @@ report.blocking.columns=id,uuid.short,start.active,depends,project,tags,recur,wa
 report.blocking.labels=ID,UUID,A,Deps,Project,Tags,R,W,Sch,Due,Until,Ticket,Description,Urg
 
 # completed
-report.completed.columns=id,uuid.short,entry,end,entry.age,depends,priority,project,tags,recur.indicator,due,ticket,description
+report.completed.columns=id,uuid.short,entry,end,entry.age,depends,priority,project,tags,recur.indicator,due,ticket,description.count
 report.completed.labels=ID,UUID,Created,Completed,Age,Deps,P,Project,Tags,R,Due,Ticket,Description
 
 # list
@@ -105,7 +105,7 @@ report.newest.columns=id,start.age,entry,entry.age,modified.age,depends.indicato
 report.newest.labels=ID,Active,Created,Age,Mod,D,P,Project,Tags,R,Wait,Sch,Due,Until,Ticket,Description
 
 # next
-report.next.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,ticket,description,urgency
+report.next.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,ticket,description.count,urgency
 report.next.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Ticket,Description,Urg
 
 # oldest
@@ -117,11 +117,11 @@ report.overdue.columns=id,start.age,entry.age,depends,priority,project,tags,recu
 report.overdue.labels=ID,Active,Age,Deps,P,Project,Tag,R,S,Due,Until,Ticket,Description,Urg
 
 # ready
-report.ready.columns=id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.countdown,due.countdown,until.remaining,ticket,description,urgency
+report.ready.columns=id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.countdown,due.countdown,until.remaining,ticket,description.count,urgency
 report.ready.labels=ID,Active,Age,D,P,Project,Tags,R,S,Due,Until,Ticket,Description,Urg
 
 # unblocked
-report.unblocked.columns=id,depends,project,priority,due,start.active,entry.age,ticket,description
+report.unblocked.columns=id,depends,project,priority,due,start.active,entry.age,ticket,description.count
 report.unblocked.labels=ID,Deps,Proj,Pri,Due,Active,Age,Ticket,Description
 
 # waiting
