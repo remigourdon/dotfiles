@@ -19,7 +19,8 @@ data.location=$HOME/.task
 #hooks.location=~/.config/task/hooks
 
 # Color theme (uncomment one to use)
-include solarized-dark-256.theme
+# Disabled for now due to https://github.com/ralphbean/bugwarrior/issues/960
+# include solarized-dark-256.theme
 
 # Defaults
 # default.command=ready
@@ -33,20 +34,39 @@ urgency.user.tag.leop.coefficient=3.0
 # Calendar
 weekstart=monday
 
+# News
+news.version=2.6.0
+
+############
+### UDAs ###
+############
+
+# Mine
+uda.ticket.type=string
+uda.ticket.label=Ticket
+
+# Bugwarrior
+uda.gmailthreadid.type=string
+uda.gmailthreadid.label=GMail Thread Id
+uda.gmailsubject.type=string
+uda.gmailsubject.label=GMail Subject
+uda.gmailurl.type=string
+uda.gmailurl.label=GMail URL
+uda.gmaillastsender.type=string
+uda.gmaillastsender.label=GMail last sender name
+uda.gmaillastsenderaddr.type=string
+uda.gmaillastsenderaddr.label=GMail last sender address
+uda.gmaillastmessageid.type=string
+uda.gmaillastmessageid.label=Last RFC2822 Message-ID
+uda.gmailsnippet.type=string
+uda.gmailsnippet.label=GMail snippet
+uda.gmaillabels.type=string
+uda.gmaillabels.label=GMail labels
+
 # Taskwarrior TUI
 # uda.taskwarrior-tui.task-report.next.filter=+READY
 #uda.taskwarrior-tui.task-report.prompt-on-delete=true
 #uda.taskwarrior-tui.task-report.prompt-on-done=true
-
-# News
-news.version=2.6.0
-
-###################
-### Custom UDAs ###
-###################
-
-uda.ticket.type=string
-uda.ticket.label=Ticket
 
 ###############
 ### Reports ###
