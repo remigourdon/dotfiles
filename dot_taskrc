@@ -40,3 +40,70 @@ weekstart=monday
 
 # News
 news.version=2.6.0
+
+###################
+### Custom UDAs ###
+###################
+
+uda.ticket.type=string
+uda.ticket.label=Ticket
+
+###############
+### Reports ###
+###############
+
+# active
+report.active.columns=id,start,start.age,entry.age,depends.indicator,priority,project,tags,recur,wait,scheduled.remaining,due,until,ticket,description
+report.active.labels=ID,Started,Active,Age,D,P,Project,Tags,Recur,W,Sch,Due,Until,Ticket,Description
+
+# all
+report.all.columns=id,status.short,uuid.short,start.active,entry.age,end.age,depends.indicator,priority,project.parent,tags.count,recur.indicator,wait.remaining,scheduled.remaining,due,until.remaining,ticket,description
+report.all.labels=ID,St,UUID,A,Age,Done,D,P,Project,Tags,R,Wait,Sch,Due,Until,Ticket,Description
+
+# blocked
+report.blocked.columns=id,depends,project,priority,due,start.active,entry.age,ticket,description
+report.blocked.labels=ID,Deps,Proj,Pri,Due,Active,Age,Ticket,Description
+
+# blocking
+report.blocking.columns=id,uuid.short,start.active,depends,project,tags,recur,wait,scheduled.remaining,due.relative,until.remaining,ticket,description.count,urgency
+report.blocking.labels=ID,UUID,A,Deps,Project,Tags,R,W,Sch,Due,Until,Ticket,Description,Urg
+
+# completed
+report.completed.columns=id,uuid.short,entry,end,entry.age,depends,priority,project,tags,recur.indicator,due,ticket,description
+report.completed.labels=ID,UUID,Created,Completed,Age,Deps,P,Project,Tags,R,Due,Ticket,Description
+
+# list
+report.list.columns=id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.countdown,due,until.remaining,ticket,description.count,urgency
+report.list.labels=ID,Active,Age,D,P,Project,Tags,R,Sch,Due,Until,Ticket,Description,Urg
+
+# long
+report.long.columns=id,start.active,entry,modified.age,depends,priority,project,tags,recur,wait.remaining,scheduled,due,until,ticket,description
+report.long.labels=ID,A,Created,Mod,Deps,P,Project,Tags,Recur,Wait,Sched,Due,Until,Ticket,Description
+
+# newest
+report.newest.columns=id,start.age,entry,entry.age,modified.age,depends.indicator,priority,project,tags,recur.indicator,wait.remaining,scheduled.countdown,due,until.age,ticket,description
+report.newest.labels=ID,Active,Created,Age,Mod,D,P,Project,Tags,R,Wait,Sch,Due,Until,Ticket,Description
+
+# next
+report.next.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,ticket,description,urgency
+report.next.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Ticket,Description,Urg
+
+# oldest
+report.oldest.columns=id,start.age,entry,entry.age,modified.age,depends.indicator,priority,project,tags,recur.indicator,wait.remaining,scheduled.countdown,due,until.age,ticket,description
+report.oldest.labels=ID,Active,Created,Age,Mod,D,P,Project,Tags,R,Wait,Sch,Due,Until,Ticket,Description
+
+# overdue
+report.overdue.columns=id,start.age,entry.age,depends,priority,project,tags,recur.indicator,scheduled.countdown,due,until,ticket,description,urgency
+report.overdue.labels=ID,Active,Age,Deps,P,Project,Tag,R,S,Due,Until,Ticket,Description,Urg
+
+# ready
+report.ready.columns=id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.countdown,due.countdown,until.remaining,ticket,description,urgency
+report.ready.labels=ID,Active,Age,D,P,Project,Tags,R,S,Due,Until,Ticket,Description,Urg
+
+# unblocked
+report.unblocked.columns=id,depends,project,priority,due,start.active,entry.age,ticket,description
+report.unblocked.labels=ID,Deps,Proj,Pri,Due,Active,Age,Ticket,Description
+
+# waiting
+report.waiting.columns=id,start.active,entry.age,depends.indicator,priority,project,tags,recur.indicator,wait,wait.remaining,scheduled,due,until,ticket,description
+report.waiting.labels=ID,A,Age,D,P,Project,Tags,R,Wait,Remaining,Sched,Due,Until,Ticket,Description
