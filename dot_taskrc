@@ -27,6 +27,8 @@ default.project=inbox
 
 # Coefficients
 urgency.uda.priority.L.coefficient=-2.0
+urgency.user.tag.bug.coefficient=4.5
+urgency.user.tag.leop.coefficient=3.0
 
 # Calendar
 weekstart=monday
