@@ -64,7 +64,7 @@ uda.gmaillabels.type=string
 uda.gmaillabels.label=GMail labels
 
 # Taskwarrior TUI
-# uda.taskwarrior-tui.task-report.next.filter=+READY
+uda.taskwarrior-tui.task-report.next.filter=+READY
 #uda.taskwarrior-tui.task-report.prompt-on-delete=true
 #uda.taskwarrior-tui.task-report.prompt-on-done=true
 
