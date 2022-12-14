@@ -122,7 +122,6 @@ alias k='kubectl'
 
 # Taskwarrior
 alias t='task'
-alias tui='taskwarrior-tui'
 
 # Display CSV
 csv() {
