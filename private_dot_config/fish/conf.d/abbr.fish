@@ -49,6 +49,7 @@ abbr -ga k 'kubectl'
 
 # Taskwarrior
 abbr -ga t 'task'
+abbr -ga tt 'task ready'
 
 # jless
 abbr -ga yless 'jless --yaml'
