@@ -237,5 +237,6 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl --min-value=5 s +
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-value=5 s 5%-
 
 # Screen capture
+bindsym --release $mod+Print  exec grimshot --notify save screen
 bindsym --release Print       exec grimshot --notify save window
 bindsym --release Shift+Print exec grimshot --notify save area

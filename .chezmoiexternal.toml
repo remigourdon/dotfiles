@@ -28,6 +28,14 @@
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "hexyl-v0.9.0-x86_64-unknown-linux-gnu/hexyl"]
 
+[".local/bin/steampipe"]
+    type = "file"
+    url = "https://github.com/turbot/steampipe/releases/download/v0.19.4/steampipe_linux_amd64.tar.gz"
+    executable = true
+    [".local/bin/steampipe".filter]
+        command = "tar"
+        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "steampipe"]
+
 [".local/bin/nu"]
     type = "file"
     url = "https://github.com/nushell/nushell/releases/download/0.74.0/nu-0.74.0-x86_64-unknown-linux-gnu.tar.gz"
