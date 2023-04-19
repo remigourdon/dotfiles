@@ -1,0 +1,24 @@
+# ~/.config/direnv/direnvrc
+# Adapted from https://rgoswami.me/posts/poetry-direnv/
+# and https://gist.github.com/dcode/2b14d0d0d7d18829bbe436b116d1d6a5
+layout_poetry() {
+
+  # Check that Poetry has been initialized
+  if [[ ! -f pyproject.toml ]]; then
+    log_error 'No pyproject.toml found. Use `poetry new` or `poetry init` to create one first.'
+    exit 2
+  fi
+
+  # Create venv if it doesn't exist
+  poetry run true
+
+  # Export environment variables
+  export VIRTUAL_ENV=$(poetry env info --path)
+  export POETRY_ACTIVE=1
+  PATH_add "$VIRTUAL_ENV/bin"
+
+  # Symlink virtual environment to .venv to help IDE
+  if [ ! -L .venv ]; then
+    ln -ns $VIRTUAL_ENV .venv
+  fi
+}
