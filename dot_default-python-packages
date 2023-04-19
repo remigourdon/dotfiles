@@ -1,0 +1,4 @@
+jupyterlab
+poetry
+black
+flake8
