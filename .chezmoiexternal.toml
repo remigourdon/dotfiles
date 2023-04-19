@@ -60,6 +60,14 @@
         command = ",unzip-from-stdin"
         args = ["lnav-0.11.1/lnav"]
 
+[".local/bin/duckdb"]
+    type = "file"
+    url = "https://github.com/duckdb/duckdb/releases/download/v0.7.1/duckdb_cli-linux-amd64.zip"
+    executable = true
+    [".local/bin/duckdb".filter]
+        command = ",unzip-from-stdin"
+        args = ["duckdb"]
+
 [".local/bin/lf"]
     type = "file"
     url = "https://github.com/gokcehan/lf/releases/download/r27/lf-linux-amd64.tar.gz"
