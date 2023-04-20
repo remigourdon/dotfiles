@@ -28,9 +28,6 @@ fi
 # Source Terraform completion
 complete -C /usr/bin/terraform terraform
 
-# Source steampipe completion
-source <(steampipe completion bash)
-
 # Enable zoxide
 eval "$(zoxide init bash)"
 
