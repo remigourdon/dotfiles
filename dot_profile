@@ -14,10 +14,6 @@ export FILE="lf"
 SCRIPTSPATH="${HOME}/.scripts"
 [ -d "${SCRIPTSPATH}" ] && export PATH="$PATH:${SCRIPTSPATH}"
 
-# Work scripts
-WORKSCRIPTSPATH="${HOME}/.work-scripts"
-[ -d "${WORKSCRIPTSPATH}" ] && export PATH="$PATH:${WORKSCRIPTSPATH}"
-
 # Go
 export GOPATH="${HOME}/.go"
 [ -d "${GOPATH}" ] && export PATH="$PATH:${GOPATH}/bin"
