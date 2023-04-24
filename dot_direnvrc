@@ -16,9 +16,4 @@ layout_poetry() {
   export VIRTUAL_ENV=$(poetry env info --path)
   export POETRY_ACTIVE=1
   PATH_add "$VIRTUAL_ENV/bin"
-
-  # Symlink virtual environment to .venv to help IDE
-  if [ ! -L .venv ]; then
-    ln -ns $VIRTUAL_ENV .venv
-  fi
 }
