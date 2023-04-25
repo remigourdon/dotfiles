@@ -52,3 +52,5 @@
     ch = !git branch --all | grep -Ev '(^\\*|HEAD)' | cut -c 3- | fzf -0 +m --preview='git log --color=always {} --' | sed "s#remotes/[^/]*/##" | xargs --no-run-if-empty git checkout
     chc = !git log --pretty=oneline --abbrev-commit --reverse | fzf -0 +m --preview='git show --color=always {1}' | cut -c -8 | xargs --no-run-if-empty git checkout
     ignore = !git gitignore-list | fzf --multi | paste -s -d, - | xargs --no-run-if-empty -I{} curl -L -s "https://www.gitignore.io/api/{}" | sed -n "/^###/,\\$p" > .gitignore
+[filter "strip-notebook-output"]
+clean = "jupyter nbconvert --ClearOutputPreprocessor.enabled=True --ClearMetadataPreprocessor.enabled=True --to=notebook --stdin --stdout --log-level=ERROR"
