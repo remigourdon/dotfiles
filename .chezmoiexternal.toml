@@ -10,11 +10,11 @@
 
 [".local/bin/tldr"]
     type = "file"
-    url = "https://github.com/dbrgn/tealdeer/releases/download/v1.5.0/tealdeer-linux-x86_64-musl"
+    url = "https://github.com/dbrgn/tealdeer/releases/download/v1.6.1/tealdeer-linux-x86_64-musl"
     executable = true
 [".config/fish/completions/tldr.fish"]
     type = "file"
-    url = "https://github.com/dbrgn/tealdeer/releases/download/v1.5.0/completions_fish"
+    url = "https://github.com/dbrgn/tealdeer/releases/download/v1.6.1/completions_fish"
 
 [".config/fish/completions/docker.fish"]
     type = "file"
@@ -22,27 +22,27 @@
 
 [".local/bin/hexyl"]
     type = "file"
-    url = "https://github.com/sharkdp/hexyl/releases/download/v0.9.0/hexyl-v0.9.0-x86_64-unknown-linux-gnu.tar.gz"
+    url = "https://github.com/sharkdp/hexyl/releases/download/v0.12.0/hexyl-v0.12.0-x86_64-unknown-linux-gnu.tar.gz"
     executable = true
     [".local/bin/hexyl".filter]
         command = "tar"
-        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "hexyl-v0.9.0-x86_64-unknown-linux-gnu/hexyl"]
+        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "hexyl-v0.12.0-x86_64-unknown-linux-gnu/hexyl"]
 
 [".local/bin/nu"]
     type = "file"
-    url = "https://github.com/nushell/nushell/releases/download/0.74.0/nu-0.74.0-x86_64-unknown-linux-gnu.tar.gz"
+    url = "https://github.com/nushell/nushell/releases/download/0.79.0/nu-0.79.0-x86_64-unknown-linux-gnu.tar.gz"
     executable = true
     [".local/bin/nu".filter]
         command = "tar"
-        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "nu-0.74.0-x86_64-unknown-linux-gnu/nu"]
+        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "nu-0.79.0-x86_64-unknown-linux-gnu/nu"]
 
 [".local/bin/watchexec"]
     type = "file"
-    url = "https://github.com/watchexec/watchexec/releases/download/cli-v1.18.12/watchexec-1.18.12-x86_64-unknown-linux-gnu.tar.xz"
+    url = "https://github.com/watchexec/watchexec/releases/download/v1.22.2/watchexec-1.22.2-x86_64-unknown-linux-gnu.tar.xz"
     executable = true
     [".local/bin/watchexec".filter]
         command = "tar"
-        args = ["--extract", "--file", "/dev/stdin", "--xz", "--to-stdout", "watchexec-1.18.12-x86_64-unknown-linux-gnu/watchexec"]
+        args = ["--extract", "--file", "/dev/stdin", "--xz", "--to-stdout", "watchexec-1.22.2-x86_64-unknown-linux-gnu/watchexec"]
 
 [".local/bin/lnav"]
     type = "file"
@@ -62,7 +62,7 @@
 
 [".local/bin/lf"]
     type = "file"
-    url = "https://github.com/gokcehan/lf/releases/download/r27/lf-linux-amd64.tar.gz"
+    url = "https://github.com/gokcehan/lf/releases/download/r29/lf-linux-amd64.tar.gz"
     executable = true
     [".local/bin/lf".filter]
         command = "tar"
@@ -70,7 +70,7 @@
 
 [".local/bin/cliphist"]
     type = "file"
-    url = "https://github.com/sentriz/cliphist/releases/download/v0.3.1/v0.3.1-linux-amd64"
+    url = "https://github.com/sentriz/cliphist/releases/download/v0.4.0/v0.4.0-linux-amd64"
     executable = true
 
 [".local/bin/tokei"]
@@ -83,23 +83,15 @@
 
 [".local/bin/procs"]
     type = "file"
-    url = "https://github.com/dalance/procs/releases/download/v0.13.2/procs-v0.13.2-x86_64-linux.zip"
+    url = "https://github.com/dalance/procs/releases/download/v0.14.0/procs-v0.14.0-x86_64-linux.zip"
     executable = true
     [".local/bin/procs".filter]
         command = ",unzip-from-stdin"
         args = ["procs"]
 
-[".local/bin/rq"]
-    type = "file"
-    url = "https://github.com/dflemstr/rq/releases/download/v1.0.2/rq-v1.0.2-x86_64-unknown-linux-gnu.tar.gz"
-    executable = true
-    [".local/bin/rq".filter]
-        command = "tar"
-        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "rq"]
-
 [".local/bin/glow"]
     type = "file"
-    url = "https://github.com/charmbracelet/glow/releases/download/v1.4.1/glow_1.4.1_linux_x86_64.tar.gz"
+    url = "https://github.com/charmbracelet/glow/releases/download/v1.5.0/glow_1.5.0_linux_x86_64.tar.gz"
     executable = true
     [".local/bin/glow".filter]
         command = "tar"
@@ -110,11 +102,6 @@
     url = "https://github.com/akavel/up/releases/download/v0.4/up"
     executable = true
 
-[".local/bin/dasel"]
-    type = "file"
-    url = "https://github.com/TomWright/dasel/releases/download/v1.27.1/dasel_linux_amd64"
-    executable = true
-
 [".local/bin/gron"]
     type = "file"
     url = "https://github.com/tomnomnom/gron/releases/download/v0.7.1/gron-linux-amd64-0.7.1.tgz"
@@ -122,11 +109,3 @@
     [".local/bin/gron".filter]
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "gron"]
-
-[".local/bin/usql"]
-    type = "file"
-    url = "https://github.com/xo/usql/releases/download/v0.12.13/usql-0.12.13-linux-amd64.tar.bz2"
-    executable = true
-    [".local/bin/usql".filter]
-        command = "tar"
-        args = ["--extract", "--file", "/dev/stdin", "--bzip2", "--to-stdout", "usql"]
