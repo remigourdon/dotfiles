@@ -112,7 +112,7 @@ keybinds clear-defaults=true {
         bind "d" { Detach; }
     }
     tmux {
-        bind "[" { SwitchToMode "Scroll"; }
+        bind "f" { SwitchToMode "EnterSearch"; }
         bind "r" { SwitchToMode "Resize"; }
         bind "m" { SwitchToMode "Move"; }
         bind "Ctrl a" { Write 2; SwitchToMode "Normal"; }
