@@ -56,3 +56,6 @@ abbr -ga yless 'jless --yaml'
 
 # vidir
 abbr -ga vidir 'vidir --verbose'
+
+# zellij
+abbr -ga zj 'zellij'

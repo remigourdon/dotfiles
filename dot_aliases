@@ -94,6 +94,9 @@ alias udua='udiskie-umount --all'
 alias udd='udiskie-umount --force --detach'
 alias udda='udiskie-umount --all --detach'
 
+# zellij
+alias zj='zellij'
+
 # json
 alias json='jq .'
 telemjson() {
