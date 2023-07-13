@@ -1,0 +1,7 @@
+layout {
+    pane {
+        command "cargo"
+        args "test" "--" "--nocapture"
+    }
+    pane
+}
