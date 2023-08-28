@@ -22,7 +22,7 @@
 
 [".local/bin/zellij"]
     type = "file"
-    url = "https://github.com/zellij-org/zellij/releases/download/v0.37.2/zellij-x86_64-unknown-linux-musl.tar.gz"
+    url = "https://github.com/zellij-org/zellij/releases/download/v0.38.0/zellij-x86_64-unknown-linux-musl.tar.gz"
     executable = true
     [".local/bin/zellij".filter]
         command = "tar"
@@ -35,6 +35,14 @@
     [".local/bin/hexyl".filter]
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "hexyl-v0.12.0-x86_64-unknown-linux-gnu/hexyl"]
+
+[".local/bin/lazydocker"]
+    type = "file"
+    url = "https://github.com/jesseduffield/lazydocker/releases/download/v0.21.1/lazydocker_0.21.1_Linux_x86_64.tar.gz"
+    executable = true
+    [".local/bin/lazydocker".filter]
+        command = "tar"
+        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "lazydocker"]
 
 [".local/bin/systeroid"]
     type = "file"
