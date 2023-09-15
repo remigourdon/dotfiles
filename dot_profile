@@ -16,7 +16,7 @@ SCRIPTSPATH="${HOME}/.scripts"
 
 # Go
 export GOPATH="${HOME}/.go"
-[ -d "${GOPATH}" ] && export PATH="$PATH:${GOPATH}/bin"
+[ -d "${GOPATH}" ] && export PATH="$PATH:/usr/local/go/bin:${GOPATH}/bin"
 
 # Rust
 RUSTPATH="${HOME}/.cargo"
