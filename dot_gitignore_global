@@ -1,3 +1,6 @@
+# Idea
+.idea/
+
 # Python virtual environment
 venv/
 .venv/
