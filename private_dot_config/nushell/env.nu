@@ -89,6 +89,7 @@ $env.ENV_CONVERSIONS = {
 $env.NU_LIB_DIRS = [
     # FIXME: This default is not implemented in rust code as of 2023-09-06.
     ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
+    ('~/.nu-overlays' | path expand)
 ]
 
 # Directories to search for plugin binaries when calling register
