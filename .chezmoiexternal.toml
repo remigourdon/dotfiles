@@ -77,11 +77,11 @@
 
 [".local/bin/lnav"]
     type = "file"
-    url = "https://github.com/tstack/lnav/releases/download/v0.11.2/lnav-0.11.2-x86_64-linux-musl.zip"
+    url = "https://github.com/tstack/lnav/releases/download/v0.12.1/lnav-0.12.1-linux-musl-x86_64.zip"
     executable = true
     [".local/bin/lnav".filter]
         command = ",unzip-from-stdin"
-        args = ["lnav-0.11.2/lnav"]
+        args = ["lnav-0.12.1/lnav"]
 
 [".local/bin/lf"]
     type = "file"
