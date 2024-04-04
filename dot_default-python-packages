@@ -1,2 +1,4 @@
 poetry
 pre-commit
+ipython
+ptpython
