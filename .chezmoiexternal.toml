@@ -85,7 +85,7 @@
 
 [".local/bin/lf"]
     type = "file"
-    url = "https://github.com/gokcehan/lf/releases/download/r31/lf-linux-amd64.tar.gz"
+    url = "https://github.com/gokcehan/lf/releases/download/r32/lf-linux-amd64.tar.gz"
     executable = true
     [".local/bin/lf".filter]
         command = "tar"
