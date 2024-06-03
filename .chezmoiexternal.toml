@@ -91,11 +91,6 @@
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "lf"]
 
-[".local/bin/cliphist"]
-    type = "file"
-    url = "https://github.com/sentriz/cliphist/releases/download/v0.4.0/v0.4.0-linux-amd64"
-    executable = true
-
 [".local/bin/tokei"]
     type = "file"
     url = "https://github.com/XAMPPRocky/tokei/releases/download/v12.1.2/tokei-i686-unknown-linux-gnu.tar.gz"
