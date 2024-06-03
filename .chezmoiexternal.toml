@@ -101,7 +101,7 @@
 
 [".local/bin/procs"]
     type = "file"
-    url = "https://github.com/dalance/procs/releases/download/v0.14.4/procs-v0.14.4-x86_64-linux.zip"
+    url = "https://github.com/dalance/procs/releases/download/v0.14.5/procs-v0.14.5-x86_64-linux.zip"
     executable = true
     [".local/bin/procs".filter]
         command = ",unzip-from-stdin"
