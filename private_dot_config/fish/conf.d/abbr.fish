@@ -47,6 +47,9 @@ abbr -ga dklsi 'docker image ls'
 # k8s
 abbr -ga k 'kubectl'
 
+# Yazi
+abbr -ga y 'yazi'
+
 # Taskwarrior
 abbr -ga t 'task'
 abbr -ga tt 'task ready'

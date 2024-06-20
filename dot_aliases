@@ -123,6 +123,9 @@ alias dkterm='docker exec --tty --interactive'
 # k8s
 alias k='kubectl'
 
+# Yazi
+alias y='yazi'
+
 # Taskwarrior
 alias t='task'
 alias tt='task ready'
