@@ -44,6 +44,7 @@
     ca = commit --amend
     ri = rebase --interactive
     f = fetch
+    w = worktree
 
     # Fuzzy
     a = ![ "${#}" -gt 0 ] && git add "${@}" || git fuzzy-index | xargs --no-run-if-empty git add
