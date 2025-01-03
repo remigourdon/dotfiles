@@ -72,14 +72,6 @@
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "nu-0.94.1-x86_64-unknown-linux-gnu/nu"]
 
-[".local/bin/watchexec"]
-    type = "file"
-    url = "https://github.com/watchexec/watchexec/releases/download/v2.1.1/watchexec-2.1.1-x86_64-unknown-linux-gnu.tar.xz"
-    executable = true
-    [".local/bin/watchexec".filter]
-        command = "tar"
-        args = ["--extract", "--file", "/dev/stdin", "--xz", "--to-stdout", "watchexec-2.1.1-x86_64-unknown-linux-gnu/watchexec"]
-
 [".local/bin/tokei"]
     type = "file"
     url = "https://github.com/XAMPPRocky/tokei/releases/download/v12.1.2/tokei-i686-unknown-linux-gnu.tar.gz"
