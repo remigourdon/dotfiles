@@ -80,14 +80,6 @@
         command = "tar"
         args = ["--extract", "--file", "/dev/stdin", "--xz", "--to-stdout", "watchexec-2.1.1-x86_64-unknown-linux-gnu/watchexec"]
 
-[".local/bin/lnav"]
-    type = "file"
-    url = "https://github.com/tstack/lnav/releases/download/v0.12.2/lnav-0.12.2-linux-musl-x86_64.zip"
-    executable = true
-    [".local/bin/lnav".filter]
-        command = ",unzip-from-stdin"
-        args = ["lnav-0.12.2/lnav"]
-
 [".local/bin/tokei"]
     type = "file"
     url = "https://github.com/XAMPPRocky/tokei/releases/download/v12.1.2/tokei-i686-unknown-linux-gnu.tar.gz"
