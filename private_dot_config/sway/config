@@ -7,6 +7,7 @@
 # Also pulls XDG_CURRENT_DESKTOP for xdg-desktop-portal-wlr to work
 # https://github.com/emersion/xdg-desktop-portal-wlr
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway
+exec eval $(gnome-keyring-daemon --start --components=ssh,secrets)
 
 #####################
 # BASIC DEFINITIONS #
